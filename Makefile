@@ -2,12 +2,7 @@ CC = cc
 
 CFLAGS = -g -Wall -Wextra -Werror
 
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c \
-ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c \ ft_strncmp.c \
-ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c \ ft_strdup.c \
-ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c \
-ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
+SRCS = $(filter-out %_bonus.c,$(wildcard *.c))
 
 OBJS = $(SRCS:.c=.o)
 
@@ -15,34 +10,33 @@ NAME = libft.a
 
 RM = rm -f
 
-AR = ar rcs
+AR = ar -rcs
 
-BONUS = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_listdelone_bonus.c \
-ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
+BONUS = $(wildcard *_bonus.c)
 
 BONUS_OBJS = $(BONUS:.c=.o)
+
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-    $(AR) $@ $^
+	$(AR) $@ $^
 
-%.o: %.c
-    $(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@ß
 
 clean:
-    $(RM) $(OBJS) $ $(BONUS_OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
-    $(RM) $(NAME) 
+	$(RM) $(NAME) 
 
-re: fclean $(NAME)
+re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(BONUS_OBJS)
+	$(AR) $(NAME) $^
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re bonusß
 
 
 # NOTES
@@ -57,3 +51,22 @@ bonus: $(OBJS) $(BONUS_OBJS)
 # %.o: %.c  |  Object files compilation rule  |  -c: $<: -o: $@: 
 # re = Rebuild rule (Rule to force a rebuild of the library)
 # .PHONY = Declaring the phony targets (targets that don't represent files)
+
+
+
+
+
+# $^ is an automatic variable that represents all of the prerequisites (dependencies) of the current target.
+# $@ is an automatic variable that represents the target of the rule being executed.
+# $< is an automatic variable that represents the first prerequisite (dependency) of the current target.
+
+# MAKEFILE EXAMPLE:     # $(NAME): $(OBJS)  \\      $(AR) $@ $^
+# Here, $@ represents the target name ($(NAME)), and $^ represents all of the prerequisites ($(OBJS)), which are the object files generated from your source files.
+# So, when this rule is executed, it effectively means "use ar to create the library named $(NAME) from all of the object files specified in $(OBJS)."
+# This syntax is very handy for avoiding repetition and making your Makefile more concise and maintainable.
+
+# MAKEFILE EXAMPLE:     # $(NAME): $(OBJS)  \\      $(AR) $@ $^
+#Here, $< represents the first prerequisite, which is the source file (%.c) that triggered the rule. So, when this rule is executed, it effectively 
+# means "compile the source file into an object file using the C compiler ($(CC)) with the specified flags ($(CFLAGS)),
+# and save the output as the target object file ($@)."
+# This syntax is commonly used for generating object files from source files in Makefiles.

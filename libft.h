@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:13:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 20:24:22 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/03/05 21:13:18 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <string.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stddef.h>
 
 /* ************************************************************************** */
 /*                                 DEFINES                                    */
@@ -45,6 +46,8 @@ typedef struct s_list
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
+
 
 /*
 The members of the t_list struct are:
