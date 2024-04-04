@@ -6,13 +6,13 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 17:12:25 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/04 22:19:04 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	ctr;
 
@@ -21,17 +21,3 @@ int	ft_strlen(char *str)
 		ctr++;
 	return (ctr);
 }
-#ifdef DO_MAIN
-
-int	main(void)
-{
-	char	*str;
-	int		result;
-
-	str = "Counting string length";
-	result = ft_strlen(str);
-	printf("The length of the string is %d.\n", result);
-	return (0);
-}
-#endif
-// cc -Wall -Wextra -Werror -DDO_MAIN ft_strlen.c

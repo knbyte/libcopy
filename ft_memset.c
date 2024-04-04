@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:13:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 20:05:10 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/04 22:02:22 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@ void	*ft_memset(void *s, int c, size_t n)
 {
 	unsigned char	*ptr;
 
-	Note("Declare a character pointer to point to the memory block");
-
-	Note("Cast void pointer to an unsigned char pointer for byte-wise access");
+	note("Declare a character pointer to point to the memory block\
+	Cast void pointer to an unsigned char pointer for byte-wise access");
 	ptr = (unsigned char *)s;
-	Note("Loop through each byte of the memory block");
+	note("Loop through each byte of the memory block");
 	while (n-- > 0)
 	{
-		Note("Set the current byte to the specified value");
+		note("Set the current byte to the specified value");
 		*ptr++ = (unsigned char)c;
 	}
-	Note("Return the pointer to the memory block");
+	note("Return the pointer to the memory block");
 	return (s);
 }
-
+/*
 #ifdef DO_MAIN
 
 int	main(void)
@@ -48,7 +47,7 @@ int	main(void)
 }
 #endif
 // 	cc -Wall -Wextra -Werror -DDO_MAIN ft_memset.c
-
+*/
 /*
 MAIN FUNCTION:
 Declare two character arrays to hold str1 and str2.

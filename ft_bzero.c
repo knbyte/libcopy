@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/09 23:32:59 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:57:48 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@ void	ft_bzero(void *s, unsigned long n)
 {
 	char	*str;
 
-	Note("While str[ctr] is a digit, multiply res by 10 and add\
+	note("While str[ctr] is a digit, multiply res by 10 and add\
 		the value of str[ctr] minus 48 (ASCII value of 0)");
-
-	Note("Cast the void pointer to a char pointer to manipulate bytes");
+	note("Cast the void pointer to a char pointer to manipulate bytes");
 	str = (char *)s;
-	Note("Loop through each byte of the memory block");
+	note("Loop through each byte of the memory block");
 	while (n-- > 0)
 		*str++ = '\0';
-	Note("While str[ctr] is a digit, multiply res by 10 and add\
+	note("While str[ctr] is a digit, multiply res by 10 and add\
 		the value of str[ctr] minus 48 (ASCII value of 0)");
 }
 
@@ -35,9 +34,8 @@ int	main(void)
 	char	str1[10];
 
 	strlcpy(str1, "abcdefghi", sizeof(str1));
-
 	printf("Before ft_bzero: %s\n", str1);
-	Note("set the first 5 characters to zero");
+	note("set the first 5 characters to zero");
 	ft_bzero(str1, 5);
 	printf("After ft_bzero: %s\n", str1);
 	return (0);

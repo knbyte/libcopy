@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:52:25 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 17:06:56 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/03/25 18:06:07 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int	ft_isprint(int c)
 	return (0);
 }
 
-#ifdef DO_MAIN
-
-int	main(void)
-{
-	printf("All printable: %d", ft_isprint("h3110w0r1d:)"));
-	printf("Not all printable: %d", ft_isprint("h3110w0r1d:)\22"));
-}
-#endif
-// cc -Wall -Wextra -Werror -DDO_MAIN ft_isprint.c
+/*
+NAME
+     isprint -- printing character test (space character inclusive)
+DESCRIPTION
+     The isprint() function tests for any printing character, including space
+     (` ').  The value of the argument must be representable as an unsigned
+     char or the value of EOF.
+*/

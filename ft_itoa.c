@@ -6,15 +6,12 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:03 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/09 23:18:01 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/03/25 17:52:25 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 /*
-The ft_itoa function allocates memory (with malloc(3)) and returns a string representing the integer received as an argument.
-It handles negative numbers and special cases like INT_MIN correctly, ensuring proper string representation.
-The returned string must be freed by the caller when it is no longer needed to avoid memory leaks.
-
 STATIC
 Static int get_num_length(int n) is declared as a static function
 within the file. This means it can only be called from within the same 
@@ -22,76 +19,125 @@ file, making it effectively private to that file. This encapsulation
 can be useful for helper functions or functions not intended to be
 part of the external interface of a module or library.
 */
-#include "libft.h"
 
-static int get_num_length(int n)
+// This function calculates the absolute value of an integer
+static int	ft_absval(int n)
 {
-    Note("Initialize the length to 1");
-    int length;
+	return ((((n) > 0) * 2 - 1) * (n));
+}
+/*
+If 'Value' is greater than 0
+(Value) > 0) - Evaluates to 1
+* 2 ) - Evaluates to 2
+ - 1) - Evaluates to 1
+* (x) - 1 x 'Value'
 
-    length = 1;
+If not
+(x) > 0) - Evaluates to 0
+(0 * 2 ) - Evaluates to 0
+- 1) - Evaluates to -1
+* ('Value') - Evaluates to -1 x - 'Value'
+*/
 
-    Note("If the number is negative, increment length to account for the negative sign");
-    if (n < 0) {
-        length++;
-        Note("Take the absolute value of n to simplify counting digits");
-        n = -n;
-    }
+// This function allocates memory for a string of a given size
+static char	*ft_strnew(size_t size)
+{
+	char	*str;
 
-    Note("Loop until n becomes a single digit");
-    while (n >= 10) {
-        Note("Increment length for each digit in n");
-        length++;
-        Note("Remove the least significant digit from n");
-        n /= 10;
-    }
-
-    Note("Return the calculated length");
-    return length;
+	note("Allocate memory for string, including space for null terminator");
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	note("Check if memory allocation was successful");
+	if (!str)
+		return (NULL);
+	note("Return the pointer to the allocated memory");
+	return (str);
 }
 
-char ft_itoa(int n)
+// This function calculates the length of an integer when converted to a string
+// and returns the string representation of the number
+static int	ft_numlen(int num)
 {
-    Note("Determine the sign of the number (1 for positive, -1 for negative)");
-    int sign = (n < 0) ? -1 : 1;
+	int	len;
 
-    Note("Handle special case for INT_MIN");
-    if (n == INT_MIN)
-        return ft_strdup("-2147483648");
+	len = 0;
+	if (num < 1)
+		len++;
+	while (num)
+	{
+		num /= 10;
+		len++;
+	}
+	return (len);
+}
 
-    Note("Calculate the length of the resulting string");
-    int length = get_num_length(n);
+char	*ft_itoa(int n)
+{
+	int		sign;
+	int		len;
+	int		num;
+	char	*str;
 
-    Note("Allocate memory for the string representation");
-    charstr = (char )malloc(sizeof(char) (length + 1));
-    if (!str)
-        return NULL;
+	sign = 0;
+	if (n < 0)
+		sign = 1;
+	if (n == INT_MIN)
+		return ("-2147483648");
+	len = ft_numlen(n);
+	str = ft_strnew(len);
+	if (!str)
+		return (NULL);
+	*(str + len) = '\0';
+	num = ft_absval(n);
+	while (len--)
+	{
+		*(str + len) = 48 + num % 10;
+		num /= 10;
+	}
+	if (sign)
+		*(str) = 45;
+	return (str);
+}
 
-    Note("Terminate the string");
-    str[length] = '\0';
+/*
+ITOA FUNCTION COMMENTS
 
-    Note("If the number is zero, set the first character of the string to '0'");
-    if (n == 0) {
-        str[0] = '0';
-        return str;
-    }
+	First set sign to 0, then if num is negative,
+	increment len to account for the - sign
 
-    Note("Fill the string with digits from the least significant to the most significant");
-    for (int i = length - 1; i >= 0; i--) {
-        Note("Extract the least significant digit and add it to the string");
-        if (n != 0) {
-            Note("Convert the digit to its character representation and add it to the string");
-            str[i] = '0' + (sign * (n % 10));
-            Note("Remove the least significant digit from n");
-            n /= 10;
-        } else {
-            Note("If n is zero but the number was originally negative, add the negative sign");
-            if (sign == -1)
-                str[0] = '-';
-            break;
-        }
-    }
+			len = 0;
+			if (num < 1)
+				len++;
 
-    Note("Return the resulting string representation");
-    return str;
-} 
+
+	Calculate length of string representation of the number, 
+	allocate memry, check sucess, add null terminator, convert
+	the number to its absoloute value.
+
+			len = ft_numlen(n);
+			str = ft_strnew(len);
+			if (!str)
+			return (NULL);
+			*(str + len) = '\0';
+			num = ft_absval(n);
+
+	To fill string with digits of the nuber, convert digit to chararacters
+	and store, move to = next number using '/=' (which divides the value of
+	the left operand with the value of the right operand and assigns the
+	result to the left operand)
+
+			while (len--)
+			{
+				*(str + len) = 48 + num % 10;
+				num /= 10;
+			}
+
+
+
+	If the nbr was negative, add '-' sign at beginning of the string,
+	then return the string representation of the number
+	
+			if (sign)
+				*(str) = 45;
+			return (str);
+}
+*/

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdidgit.c                                      :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:28:53 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 16:44:45 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/03/25 18:05:28 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-#ifdef DO_MAIN
+/*
+NAME
+     isdigit, isnumber -- decimal-digit character test
 
-int    main(void)
-{
-    printf("All digit: %d", ft_isdigit("43110"));
-    printf("Not all digit: %d", ft_isdigit("h3110"));
-}
-#endif
-// cc -Wall -Wextra -Werror -DDO_MAIN ft_isdigit.c
+DESCRIPTION
+     The isdigit() function tests for a decimal digit character.  Regardless
+     of locale, this includes the following characters only:
+
+     ``0''         ``1''         ``2''         ``3''         ``4''
+     ``5''         ``6''         ``7''         ``8''         ``9''
+*/
