@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:10:57 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/05 21:03:55 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:36:49 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,15 @@ int	ft_isalnum(int c)
 }
 
 /*
+
+~ N O T E S ~
+
+F u n c t i o n   I n f o :
+
+We check if the character is a digit, an uppercase letter, or a lowercase
+letter using the ascii values.  If it is, we return 1, otherwise we return 0.
+
+M a n u a l    P a g e    I n f o :
 NAME
      isalnum -- alphanumeric character test
 

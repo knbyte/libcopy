@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:26:37 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:37:19 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ void	ft_bzero(void *s, unsigned long n)
 		*str++ = '\0';
 }
 
-/* NOTES: 
+/*
+
+~ N O T E S ~
 
 F u n c t i o n   I n f o :
 
@@ -53,4 +55,5 @@ SYNOPSIS
 DESCRIPTION
 	The bzero() function writes n zeroed bytes to the string s.  If n is
 	zero, bzero() does nothing.
+	
 */

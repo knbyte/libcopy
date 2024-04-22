@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:44:40 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 18:04:45 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:38:49 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,20 @@ int	ft_isascii(int c)
 }
 
 /*
+
+~ N O T E S ~
+
+F u n c t i o n   I n f o :
+
+We check if the character is in the range of ASCII characters (0-0177).
+If it is, we return 1. Otherwise, we return 0.
+
+M a n u a l    P a g e    I n f o :
 NAME
     isascii -- test for ASCII character
 
 DESCRIPTION
     The isascii() function tests for an ASCII character, which is any charac-
     ter between 0 and octal 0177 inclusive.
+
 */

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:12:14 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:28:19 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:37:14 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ int	ft_atoi(const char *str)
 	return (result * sign);
 }
 
-/* NOTES: 
+/*
+
+~ N O T E S ~
 
 F u n c t i o n   I n f o :
 
@@ -72,4 +74,5 @@ DESCRIPTION
 
 ERRORS
 	The function atoi() need not affect the value of errno on an error.
+	
 */

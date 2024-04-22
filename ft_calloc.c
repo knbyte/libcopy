@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:53:47 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:08:07 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:37:09 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,23 @@ void	*ft_calloc(size_t count, size_t size)
 }
 
 /*
-NAME
-	calloc
+
+~ N O T E S ~
+
+F u n c t i o n   I n f o :
+
+We initialize two variables, total_size, which is the total size of the
+allocated memory, and ptr, which is the pointer to the allocated memory.
+
+We then multiply count by size to get the total size of the allocated memory.
+
+We then call the malloc() function to allocate the memory.  If successful,
+we call the bzero() function to initialize the memory to zero.
+
+Finally, we return the pointer to the allocated memory.
+
+
+M a n u a l    P a g e    I n f o :
 
 SYNOPSIS
 	#include <stdlib.h>
@@ -49,4 +64,5 @@ DESCRIPTION
 RETURN VALUES
 	If successful, calloc() function return a pointer to allocated memory.
 	If there is an error, they return a NULL pointer and set errno to ENOMEM.
+	
 */
