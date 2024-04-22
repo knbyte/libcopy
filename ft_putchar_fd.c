@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 21:36:46 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:03:59 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/04 22:53:36 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ Outputs the character 'c' to the given file descriptor.
 */
 void	ft_putchar_fd(char c, int fd)
 {
-	note("Use the write system call to output the \
-		character 'c' to the file descriptor 'fd'");
 	write(fd, &c, 1);
 }
 

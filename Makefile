@@ -1,39 +1,63 @@
+# Name of the static library to be built
+Library = libft
+
+SRC = "~/libft"
+
+# List of source files (C functions) without the ".c" extension
+# Find all files ending with ".c" in the current directory
+files := $(wildcard ./*.c)
+
+# Not 100% sure why but the files found end with .c.c so we need to remove the second .c
+targets := $(files:%.c=%)
+
+# Compiler to be used
+Compiler = cc
+
+# Compiler flags for the compilation process
+CmpFlags = -g -Wall -Wextra -Werror
+
+# Output name for the static library
+OUTN = $(Library).a
+
+# List of source files with ".c" extension
+CFILES := $(targets:%=%.c)
+
+# List of object files with ".o" extension (generated from C source files)
+OFILES := $(targets:%=%.o)
+
+# Target name for the final library file
 NAME = libft.a
 
-CC = cc
+# Rule to build the library
+$(NAME):
+	$(Compiler) $(CmpFlags) -c $(CFILES) -I./
+	ar -rc $(OUTN) $(OFILES)
 
-CFLAGS = -g -Wall -Wextra -Werror
-
-SOURCES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
-ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
-ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
-ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
-ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
-
-OBJECTS = $(SOURCES:.c=.o)
-
-AR = ar rcs
-
-RM = rm -f
-
-
+# Default target is "all," which builds the library
 all: $(NAME)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
-
-$(NAME): $(OBJECTS)
-	$(AR) $@ $^
-
+# Rule to clean up object files and the library
 clean:
-	$(RM) $(OBJECTS) $(BONUS_OBJECTSS)
+	rm -f $(NAME)
+	rm -f $(OFILES)
 
+# Rule to remove all generated files, including the library
 fclean: clean
-	$(RM) $(NAME) 
+	rm -f $(NAME)
 
+# Rule to force a rebuild of the library
 re: fclean all
 
-.PHONY: all clean fclean re
+# Declaring the phony targets (targets that don't represent files)
+.PHONY: all, clean, fclean, re
+
+
+# LIST OF SOURCE FILES INSTEAD OF WILDCARD RULE:
+# FILES = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c \
+# ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
+# ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c \
+# ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
+# ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 # NOTES
 
@@ -48,9 +72,10 @@ re: fclean all
 # re = Rebuild rule (Rule to force a rebuild of the library)
 # .PHONY = Declaring the phony targets (targets that don't represent files)
 
-
-
-
+# AFTER MARKING REPLACE SRC LIST WITH WILDCARD RULE:
+# # List of source files (C functions) without the ".c" extension
+# Find all files ending with ".c" in the current directory
+# files := $(wildcard ./*.c)
 
 # $^ is an automatic variable that represents all of the prerequisites (dependencies) of the current target.
 # $@ is an automatic variable that represents the target of the rule being executed.

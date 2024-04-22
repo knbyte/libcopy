@@ -6,42 +6,41 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 17:57:48 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:26:37 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 void	ft_bzero(void *s, unsigned long n)
 {
 	char	*str;
 
-	note("While str[ctr] is a digit, multiply res by 10 and add\
-		the value of str[ctr] minus 48 (ASCII value of 0)");
-	note("Cast the void pointer to a char pointer to manipulate bytes");
 	str = (char *)s;
-	note("Loop through each byte of the memory block");
 	while (n-- > 0)
 		*str++ = '\0';
-	note("While str[ctr] is a digit, multiply res by 10 and add\
-		the value of str[ctr] minus 48 (ASCII value of 0)");
 }
 
-#ifdef DO_MAIN
+/* NOTES: 
 
-int	main(void)
-{
-	char	str1[10];
+F u n c t i o n   I n f o :
 
-	strlcpy(str1, "abcdefghi", sizeof(str1));
-	printf("Before ft_bzero: %s\n", str1);
-	note("set the first 5 characters to zero");
-	ft_bzero(str1, 5);
-	printf("After ft_bzero: %s\n", str1);
-	return (0);
-}
-#endif
-/*
+We initialize a character pointer (str) to the start of the string (s).
+
+While n is greater than zero, we decrement n and increment the pointer.
+This works because the bzero() function only writes zero bytes to the string.
+
+The pointer (str) is incremented after each write, so it starts at the first
+character of the string (s) and goes up to the last character.
+
+The loop will stop when n reaches zero, because the loop will not execute
+if n is equal to zero.
+
+The loop writes the value of '\0' to each character of the string (s).
+
+The effect of this function is that it sets the first n characters of the
+string (s) to zeroes, which is the same as the standard bzero() function.
+
+M a n u a l    P a g e    I n f o :
+
 NAME
 	bzero -- write zeroes to a byte string
 

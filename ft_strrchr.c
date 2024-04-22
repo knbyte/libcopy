@@ -6,35 +6,31 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:10:48 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:15:42 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:58:13 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 The ft_strrchr function searches for the last occurrence of
 the character c (an unsigned char) in the string pointed to by str.
-It returns a pointer to the last occurrence of c in str,
-or NULL if c is not found.
+It returns a pointer to the last occurrence of character c in,
+ string s or NULL if c is not found.
 */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_occurrence;
+	int			ctr;
+	const char	*start;
 
-	last_occurrence = NULL;
-	note("Initialize pointer to store the last occurrence then \
-	loop through each character of the string until the null terminator");
-	while (*str != '\0')
+	ctr = ft_strlen(s);
+	start = s;
+	while (ctr >= 0)
 	{
-		note("If the current character matches the target character,\
-		update the ptr to the last occurrence, then move to next character.");
-		if (*str == (char)c)
-			last_occurrence = str;
-		str++;
+		if (*(s + ctr) == (char)c)
+			return ((char *)s + ctr);
+		ctr--;
 	}
-	note("If the target character is found, return a pointer \
-	to the last occurrence; otherwise, return NULL");
-	return ((char *)last_occurrence);
+	return (NULL);
 }

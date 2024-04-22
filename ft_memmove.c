@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:02 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:01:24 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 17:08:34 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,24 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*d;
-	const char	*s;
-	size_t		ctr;
+	void	*dest_ptr;
 
-	d = dest;
-	s = src;
-	if (s < d && d < s + n)
+	dest_ptr = dest;
+	if (!dest && !src)
+		return (dest);
+	if (dest == src)
+		return (dest);
+	if (dest > src)
 	{
-		ctr = n;
-		while (ctr != 0)
-		{
-			ctr--;
-			d[ctr] = s[ctr];
-		}
+		while (n--)
+			((char *)dest)[n] = ((char *)src)[n];
 	}
 	else
 	{
-		ctr = 0;
-		while (ctr < n)
-		{
-			ctr++;
-			d[ctr - 1] = s[ctr - 1];
-		}
+		while (n--)
+			*(char *)dest++ = *(char *)src++;
 	}
-	return (dest);
+	return (dest_ptr);
 }
 
 /*

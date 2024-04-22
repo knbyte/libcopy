@@ -6,11 +6,11 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:14:10 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:13:06 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:45:58 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strdup(const char *src)
 {
@@ -18,25 +18,19 @@ char	*ft_strdup(const char *src)
 	int		ctr;
 
 	ctr = 0;
-	note("Count through source string to find size, \
-		then allocate that amount of memory to the destination string.");
-	while (src[ctr++])
-		dest = malloc(sizeof(char) * ctr);
+	while (src[ctr] != '\0')
+		ctr++;
+	dest = (char *)malloc(sizeof(char) * (ctr + 1));
+	if (dest == NULL)
+		return (NULL);
 	ctr = 0;
-	note("If insufficient memory is available, NULL is returned");
-	if (!dest)
-		return (0);
-	else
+	while (src[ctr] != '\0')
 	{
-		note("After allocating memory - strcpy source to destination, \
-			NUL terminate and then return the copied string (destination)");
-		while (src[ctr++])
-		{
-			dest[ctr] = src[ctr];
-		}
-		dest[ctr] = '\0';
-		return (dest);
+		dest[ctr] = src[ctr];
+		ctr++;
 	}
+	dest[ctr] = '\0';
+	return (dest);
 }
 
 /*

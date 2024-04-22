@@ -6,35 +6,35 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:21:38 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:46:35 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 /*
 Applies the function 'f' to each character of the string 's',
 passing its index as the first argument, to create a new 
 string resulting from successive applications of 'f'.
 */
+
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
-	char	*dup_str;
-	size_t	ctr;
+	char	*res;
+	int		ctr;
 
-	len = ft_strlen(s);
-	ctr = 0;
-	note("Duplicate the input string 's'");
-	dup_str = ft_strdup(s);
-	if (!dup_str)
+	if (!s || !f)
 		return (NULL);
-	note("Apply the function 'f' to each character of the duplicated string");
-	while (ctr < len)
+	res = (char *)malloc(ft_strlen((char *)s) + 1);
+	if (!res)
+		return (NULL);
+	ctr = 0;
+	while (s[ctr])
 	{
-		dup_str[ctr] = f(ctr, dup_str[ctr]);
+		res[ctr] = f(ctr, s[ctr]);
 		ctr++;
 	}
-	note("Return the modified string");
-	return (dup_str);
+	res[ctr] = '\0';
+	return (res);
 }

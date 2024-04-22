@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:53:47 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 17:59:41 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:08:07 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,40 +18,13 @@ void	*ft_calloc(size_t count, size_t size)
 	size_t	total_size;
 	void	*ptr;
 
-	note("Calculate total size needed for allocation");
 	total_size = count * size;
-	note("Allocate memory block");
 	ptr = malloc(total_size);
-	note("Check if memory allocation was successful, \
-	initialise memblock to 0. return ptr to allocated memory");
 	if (ptr)
 		ft_bzero(ptr, total_size);
 	return (ptr);
 }
 
-#ifdef DO_MAIN
-
-int	main(void)
-{
-	int		*arr;
-	size_t	i;
-
-	size = 5;
-	arr = (int *)ft_calloc(size, sizeof(int));
-	if (arr == NULL)
-	{
-		printf("Memory allocation failed.\n");
-		return (1);
-	}
-	printf("Array elements after calloc:\n");
-	i = 0;
-	while (i < size)
-		printf("%d ", arr[i++]);
-	printf("\n");
-	free(arr);
-	return (0);
-}
-#endif
 /*
 NAME
 	calloc

@@ -6,32 +6,29 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:12:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 18:55:47 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:43:52 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
 {
-	size_t	ctr;
+	unsigned long	ctr;
+	unsigned char	*s1;
+	unsigned char	*s2;
 
+	s1 = (unsigned char *)str1;
+	s2 = (unsigned char *)str2;
+	ctr = 0;
 	if (n == 0)
 		return (0);
-	ctr = 0;
-	note("Iterate through strs up to n characters or until difference found");
-	while (s1[ctr] && s1[ctr] == s2[ctr])
-	{
-		if (ctr < n - 1)
-			ctr++;
-		else
-			return (0);
-	}
-	return ((unsigned char)s1[ctr] - (unsigned char)s2[ctr]);
+	while (s1[ctr] == s2[ctr] && (ctr < n - 1))
+		ctr++;
+	return (s1[ctr] - s2[ctr]);
 }
-
-// Compare up to n characters of two strings
-// Returns:
-//   - 0 if the strings are equal up to the specified length
-//   - Negative value if s1 is less than s2
-//   - Positive value if s1 is greater than s2
+// Line 26: iterate through both strings until they are not equal
+// or until the end of the string is reached.
+// If they aren't equal, return the difference
+// between the two strings at the current index.
+// If the end of the string is reached, return the
+// difference between the two strings at the current index.
+// If the end of the string is reached, return 0.

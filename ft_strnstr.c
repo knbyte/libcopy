@@ -6,40 +6,33 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:13:27 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:41:26 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 14:48:24 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t length)
+char	*ft_strnstr(const char *str, const char *substr, unsigned int len)
 {
-	size_t	hayctr;
-	size_t	needlectr;
+	unsigned int	hay;
+	unsigned int	needle;
+	char			*result;
 
-	hayctr = 0;
-	note("Iterate through haystack until end or until specified length");
-	while (haystack[hayctr] && hayctr <= length)
+	if (len == 0 && !str)
+		return ((char *)0);
+	result = (char *)str;
+	hay = -1;
+	if (!substr[0])
+		return (result);
+	while (result[++hay] && hay < len)
 	{
-		needlectr = 0;
-		note("Compare characters of needle with characters\
-		of haystack starting from hayctr");
-		while (needle[needlectr] == haystack[hayctr + needlectr])
+		needle = 0;
+		while (result[hay + needle] == substr[needle] && (hay + needle) < len)
 		{
-			note("If the entire needle is found in the haystack,\
-			return pointer to start of needle");
-			if (needle[needlectr + 1] == '\0')
-			{
-				return ((char *)(haystack + hayctr));
-			}
-			note("Move to the next character in both needle and haystack");
-			needlectr++;
+			if (!substr[needle + 1])
+				return (&result[hay]);
+			needle++;
 		}
-		note("Move to the next character in haystack");
-		hayctr++;
 	}
-	note("If needle is not found within the specified length, return NULL");
-	return (NULL);
+	return ((char *)0);
 }
 
 /*

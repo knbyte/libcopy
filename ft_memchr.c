@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:12:37 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 18:37:41 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:58:37 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,14 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	const unsigned char	*point;
 	unsigned char		chr;
 
-	if (s == NULL)
-		return (NULL);
-	note("Initialize the pointer to point to the start of the memory block");
 	point = s;
 	chr = (unsigned char)c;
 	while (n-- > 0)
 	{
-		note("While iterating through block, check current buye matches current \
-				char, if a match is found, return pointer to current position");
 		if (*point == chr)
 			return ((void *)point);
 		point++;
 	}
-	note("If the char is not found within the specified # of bytes");
 	return (NULL);
 }
 

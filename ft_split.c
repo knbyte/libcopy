@@ -6,65 +6,100 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:24:04 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:39:13 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 15:18:07 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-/*
-Counts the number of words in the input string 's' based on the delimiter 'c'.
-*/
-static size_t	count_words(char const *s, char c)
+static int	count_words(char *str, char c)
 {
-	size_t	num_words;
-	size_t	ctr;
+	int	ctr;
+	int	count;
 
-	num_words = 0;
+	count = 0;
 	ctr = 0;
-	while (s[ctr])
+	while (str[ctr] != '\0')
 	{
-		note("Skip leading delimiter characters");
-		while (s[ctr] && s[ctr] == c)
+		while (str[ctr] != '\0' && (str[ctr] == c))
 			ctr++;
-		note("Increment word cnt if a non-delimiter character is encountered");
-		if (s[ctr])
-			num_words++;
-		note("Move to the next word");
-		while (s[ctr] && s[ctr] != c)
+		if (str[ctr] != '\0')
+			count++;
+		while (str[ctr] != '\0' && !(str[ctr] == c))
 			ctr++;
 	}
-	return (num_words);
+	return (count);
 }
 
-char	**ft_split(char const *s, char c)
+static int	get_word_len(char *str, char c)
 {
-	char	**arr;
-	int		word_len;
-	int		i;
+	int	ctr;
 
-	i = 0;
-	arr = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !arr)
-		return (0);
-	while (*s)
+	ctr = 0;
+	while (str[ctr] != '\0' && str[ctr] != c)
 	{
-		while (*s == c && *s)
-			s++;
-		if (*s)
-		{
-			if (ft_strchr(s, c) == NULL)
-				word_len = ft_strlen(s);
-			else
-				word_len = ft_strchr(s, c) - s;
-			arr[i++] = ft_substr(s, 0, word_len);
-			s += word_len;
-		}
+		ctr++;
 	}
-	arr[i] = NULL;
-	return (arr);
+	return (ctr);
 }
 
+static char	*allocate_word(char *str, char c)
+{
+	int		word_len;
+	int		ctr;
+	char	*word;
+
+	ctr = -1;
+	word_len = get_word_len(str, c);
+	word = (char *)malloc(word_len + 1);
+	while (++ctr < word_len)
+		word[ctr] = str[ctr];
+	word[ctr] = '\0';
+	return (word);
+}
+
+// Return a null pointer afterwards so we can save a couple lines in ft_split
+void	*freestring(char **string, int ctr)
+{
+	int	a;
+
+	a = 0;
+	while (a <= ctr)
+		free(string[ctr++]);
+	free(string);
+	return (NULL);
+}
+
+char	**ft_split(const char *str, char c)
+{
+	char	**sub_strings;
+	int		ctr1;
+	int		ctr2;
+
+	ctr2 = 0;
+	ctr1 = 0;
+	if (str == NULL)
+		return (NULL);
+	sub_strings = (char **) malloc(sizeof(char *) * \
+	(count_words((char *)str, c) + 1));
+	if (sub_strings == NULL)
+		return (NULL);
+	while (str[ctr2] != '\0')
+	{
+		while (str[ctr2] != '\0' && (str[ctr2] == c))
+			ctr2++;
+		if (str[ctr2] != '\0')
+			sub_strings[ctr1++] = allocate_word((char *)&str[ctr2], c);
+		if (ctr1 > 0 && sub_strings[ctr1 - 1] == NULL)
+			return (freestring(sub_strings, ctr1 - 1));
+		while (str[ctr2] && !(str[ctr2] == c))
+			ctr2++;
+	}
+	sub_strings[ctr1] = 0;
+	return (sub_strings);
+}
 /*
 Allocates (with malloc(3)) and returns an array of 
 strings obtained by splitting 's'using the character 'c' 

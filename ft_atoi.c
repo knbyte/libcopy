@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:12:14 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/25 17:57:27 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/22 15:28:19 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,41 +15,61 @@
 int	ft_atoi(const char *str)
 {
 	int	ctr;
-	int	neg;
-	int	num;
+	int	result;
+	int	sign;
 
-	ctr = 0;
-	neg = -1;
-	num = 0;
-	while (str[ctr] == ' ' || str[ctr] == '\n' || str[ctr] == '\t' || \
+	ctr = -1;
+	result = 0;
+	sign = 1;
+	while (str[++ctr] == ' ' || str[ctr] == '\t' || str[ctr] == '\n' || \
 			str[ctr] == '\v' || str[ctr] == '\f' || str[ctr] == '\r')
-		ctr++;
-	while (str[ctr] == '-' || str[ctr] == '+')
-		if (str[ctr++] == '-')
-			neg *= -1;
-	note("While str[ctr] is a digit, multiply res by 10 and add\
-		the value of str[ctr] minus 48 (ASCII value of 0)");
-	while (str[ctr] >= '0' && str[ctr] <= '9')
-		num = num * 10 + (str[ctr++] - '0');
-	return (num * neg);
+		;
+	if (str[ctr] == '-')
+		sign = -1;
+	if (str[ctr] == '-' || str[ctr] == '+')
+		++ctr;
+	while (str[ctr] >= 48 && str[ctr] <= 57)
+	{
+		result = result * 10 + (str[ctr] - 48);
+		++ctr;
+	}
+	return (result * sign);
 }
 
-/*
-MAN ATOI
+/* NOTES: 
+
+F u n c t i o n   I n f o :
+
+Initialise three varables, the counter/iterater at the first digit (0), 
+the result (0), and the sign as positive (1).
+
+First we skip all the spaces, tabs, newlines, vertical tabs, form feeds,
+and carriage returns.
+
+Then we check if the first character is a minus or plus sign.
+If it is negative (shown by the minus sign), we set the sign to -1.
+
+We then increment the iterator and check if the next character is a digit.
+If it is, we multiply the result by 10 and add the digit to it.
+We then increment the iterator again.
+We return the result multiplied by the sign.
+
+
+M a n u a l    P a g e    I n f o :
 
 NAME
-    atoi -- convert ASCII string to integer
+	atoi -- convert ASCII string to integer
 
 SYNOPSIS
-    #include <stdlib.h>
+	#include <stdlib.h>
 
-    int
-    atoi(const char *str);
+	int
+	atoi(const char *str);
 
 DESCRIPTION
-    The atoi() function converts the initial portion of the string pointed to
-    by str to int representation.
+	The atoi() function converts the initial portion of the string pointed
+	to by str to int representation.
 
 ERRORS
-    The function atoi() need not affect the value of errno on an error.
+	The function atoi() need not affect the value of errno on an error.
 */

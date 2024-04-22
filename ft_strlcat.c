@@ -6,12 +6,11 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:07:29 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:14:20 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/16 16:30:45 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <sys/_types/_size_t.h>
 
 /*
 Function to copy and concatenate strings
@@ -25,20 +24,14 @@ int	ft_strlcat(char *dest, const char *src, size_t destsize)
 	size_t	src_len;
 	size_t	total_len;
 
-	note("Check if dest or src is NULL, return 0");
-	if (!dest || !src)
+	if ((!dest || !src) && !destsize)
 		return (0);
-	note("Calculate the length of dest and src");
 	dest_len = ft_strlen(dest);
 	src_len = ft_strlen(src);
-	note("Calculate the total length including null terminator");
 	total_len = dest_len + src_len;
-	note("Check if the destination buffer is too small");
 	if (dest_len >= destsize)
 		return (src_len + destsize);
-	note("Copy characters from src to dest, ensuring null termination");
 	ft_strlcpy(dest + dest_len, src, destsize - dest_len);
-	note("Return the total length of the concatenated string");
 	return (total_len);
 }
 
