@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 static int	count_words(char *str, char c)
 {
@@ -100,8 +98,42 @@ char	**ft_split(const char *str, char c)
 	sub_strings[ctr1] = 0;
 	return (sub_strings);
 }
+
 /*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
 Allocates (with malloc(3)) and returns an array of 
 strings obtained by splitting 's'using the character 'c' 
 as a delimiter. The array must end with a NULL pointer.
+
+
+F u n c t i o n   P r o c e s s :
+
+here
+
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+
+int		main(int argc, char **argv)
+{
+	char	**tab;
+	char	*str;
+
+	if (argc != 3)
+		return (1);
+	str = argv[1];
+	tab = ft_split(str, *argv[2]);
+	if (!tab)
+		return (1);
+	while (*tab)
+	{
+		printf("%s\n", *tab);
+		tab++;
+	}
+	return (0);
+}
 */

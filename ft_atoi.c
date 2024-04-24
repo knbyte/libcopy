@@ -47,7 +47,7 @@ It does this by taking a string as an argument and returning the converted integ
 
 F u n c t i o n   P r o c e s s :
 
-Initialise three varables, the counter/iterater at the first digit (0), 
+Delcare and define three varables, the counter/iterater at the first digit (0), 
 the result (0), and the sign as positive (1).
 
 First we skip all the spaces, tabs, newlines, vertical tabs, form feeds,

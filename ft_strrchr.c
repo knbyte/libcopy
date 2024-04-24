@@ -43,10 +43,18 @@ char	*ft_strrchr(const char *s, int c)
 A b o u t   F u n c t i o n :
 
 strrchr stands for "String Reverse Character Copy"
-The strrchr function locates the last occurrence of c (converted to an unsigned
-char) in the string s.
+The strrchr function locates the last occurrence of c (converted to an
+unsigned char) in the string s.
 
 
 F u n c t i o n   P r o c e s s :
 
+We declare two variables, ctr which we set to the length of the string
+using ft_strlen and start, which we set to the address of the string.
+
+While ctr is greater than or equal to 0, we check if the character at
+the address of s + ctr is equal to c. If it is, we return the address
+of s + ctr. Otherwise we decrement ctr and loop again.
+
+We return NULL if c is not found in the string.
 */

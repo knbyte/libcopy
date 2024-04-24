@@ -23,27 +23,31 @@ int	ft_tolower(int c)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+The tolower() function converts an upper-case letter to the corresponding
+lower-case letter. If the argument is an upper-case letter, the tolower()
+function returns the corresponding lower-case letter if there is one;
+otherwise, the argument is returned unchanged.
+
+F u n c t i o n   P r o c e s s :
 
 We check if the character is in the range of uppercase letters (65-90)
 or lowercase letters (97-122). If it is, we return the lowercase version
 of the character by adding 32 to it (the difference on the ASCII table).
 Otherwise, we return the original character.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
 
-SYNOPSIS
-     int
-     tolower(int c);
+int	main(void)
+{
+	char	str[] = "aBcDeFgHiJkLmNoPqRsTuVwXyZ";
 
-DESCRIPTION
-     The tolower() function converts an upper-case letter to the 
-	 corresponding lower-case letter.  The argument must be representable
-     as an unsigned char or the value of EOF.
-
-RETURN VALUES
-     If the argument is an upper-case letter, the tolower() function
-	 returns the corresponding lower-case letter if there is one;
-     otherwise, the argument is returned unchanged.
-
+     printf("%s\n", str);
+     printf("%s\n", ft_tolower(str));
+     printf("%s\n", str);
+	return (0);
+}
 */

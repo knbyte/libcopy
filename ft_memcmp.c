@@ -39,7 +39,7 @@ s1 and the object pointed to by s2.
 
 F u n c t i o n   P r o c e s s :
 
-We initialise three variables, ctr, which is a counter variable used to
+We declare three variables, ctr, which is a counter variable used to
 count through the strings, and s1 and s2, which are pointers to the
 strings to be compared.
 

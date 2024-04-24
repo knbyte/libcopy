@@ -39,7 +39,7 @@ char) in the first n bytes of the object pointed to by s.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize two variables, *point, which is a pointer to the memory block and
+We declare two variables, *point, which is a pointer to the memory block and
 chr, which is the character to search for. We set point to s and chr to c. 
 For chr we specify the type as an unsigned char.
 

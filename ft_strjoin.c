@@ -29,6 +29,52 @@ char	*ft_strjoin(char const *s1, char const *s2)
 }
 
 /*
-Allocates (with malloc(3)) and returns a new string,
-which is the result of the concatenation of 's1' and 's2'.
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+Allocates (with malloc(3)) and returns a new string, which
+is the result of the concatenation of ’s1’ and ’s2’.
+
+If the allocation fails, the function returns NULL.
+
+F u n c t i o n   P r o c e s s :
+
+We declare three variables, result, s1_len, and s2_len. We initialize
+s1_len to the length of the string s1, and s2_len to the length of
+the string s2. We allocate memory for the result string using the
+malloc function, we allocate enough space for the contents of s1 and s2.
+If the result is NULL, we return NULL. Otherwise, we use the ft_strlcpy
+function to copy the contents of s1 into the result string. We add 1 to
+s1_len to account for the null terminator. We then use the ft_strlcpy
+function to do the same with s2, lastly we return the result string.
+
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+#include <stdlib.h>
+
+int	main(void)
+{
+	char	*str1;
+	char	*str2;
+	char	*result;
+
+	str1 = "Hello, ";
+	str2 = "World!";
+
+	result = ft_strjoin(str1, str2);
+
+	if (!result)
+	{
+		printf("Error: malloc failed\n");
+		return (1);
+	}
+
+	printf("%s\n", result);
+	free(result);
+
+	return (0);
+}
 */

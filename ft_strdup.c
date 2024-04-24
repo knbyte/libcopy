@@ -61,6 +61,9 @@ null character to the end of the string and return the allocated memory.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <stdio.h>
+#include <stdlib.h>
+
 int	main(void)
 {
 	char	*test_string;

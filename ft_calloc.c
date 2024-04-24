@@ -39,7 +39,7 @@ allocated memory.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize two variables, total_size, which is the total size of the
+We delcare and define two variables, total_size, which is the total size of the
 allocated memory, and ptr, which is the pointer to the allocated memory.
 
 We then multiply count by size to get the total size of the allocated memory.

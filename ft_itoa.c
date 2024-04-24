@@ -84,19 +84,19 @@ the allocation fails.
 F u n c t i o n   P r o c e s s :
 
 First we make a function to count the number of digits in the number.
-We intitialize the variable ctr to 0. Then we check if the number is
+We declare the variable ctr and set itto 0. Then we check if the number is
 negative. If it is, we increment the ctr by 1. We then loop through
 the number until it reaches 0. Each time we divide the number by 10,
 we increment the ctr by 1. Finally, we return the ctr.
 
-We then make a function to reverse the string. We initialize three
-variables ctr1 to 0, ctr2 to the length of the string minus 1, and
+We then make a function to reverse the string. We declare three
+variables ctr1 (set to 0), ctr2 (set to the length of the string minus 1), and
 temp as a temporary variable. We then loop through the string until
 ctr1 is less than ctr2. We then swap the characters at ctr1 and
 ctr2. We then increment ctr1 and decrement ctr2. Finally, we return
 the string.
 
-Lastly we have our itoa function. We initialise three variables,
+Lastly we have our itoa function. We declare three variables,
 *res (result), ctr, and sign. We set sign to 1, check if the number
 is negative. If it is, we set the sign to -1. We then allocate memory
 for the string using the numlen function, If the allocation fails,

@@ -34,8 +34,9 @@ into the object pointed to by s1.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize a pointer to the destination string. We check if the
-destination and source strings are not NULL, if they are, we return NULL.
+We declare a variable dest_ptr, which is a pointer to the destination string.
+We check if the destination and source strings are not NULL, if they are, 
+we return NULL.
 
 We use a while loop while decrementing n to copy n bytes from the source 
 string to the destination string. We use the *(char *) operator to convert

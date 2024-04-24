@@ -31,7 +31,7 @@ The bzero function sets the first n bytes of the string s to zeroes.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize a character pointer (str) to the start of the string (s).
+We declare a character pointer (str) and set it to the start of the string (s).
 
 While n is greater than zero, we decrement n and increment the pointer.
 This works because the bzero() function only writes zero bytes to the string.
