@@ -49,6 +49,8 @@ string (s) to zeroes, which is the same as the standard bzero() function.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <stdio.h>
+
 int	main(void)
 {
 	char	str[] = "Hello, World!\n";

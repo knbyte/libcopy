@@ -23,17 +23,34 @@ int	ft_isascii(int c)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+Tests for an ASCII character, which is any character between 0 and 
+octal 0177 inclusive.
+
+
+F u n c t i o n   P r o c e s s :
 
 We check if the character is in the range of ASCII characters (0-0177).
 If it is, we return 1. Otherwise, we return 0.
 
-M a n u a l    P a g e    I n f o :
-NAME
-    isascii -- test for ASCII character
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
 
-DESCRIPTION
-    The isascii() function tests for an ASCII character, which is any charac-
-    ter between 0 and octal 0177 inclusive.
+int	main(void)
+{
+	int	i;
 
+	i = -255;
+	while (i < 255)
+	{
+		if (ft_isascii(i) == 1)
+			printf("%d is an ASCII character\n", i);
+		else
+			printf("%d is not an ASCII character\n", i);
+		i++;
+	}
+	return (0);
+}
 */

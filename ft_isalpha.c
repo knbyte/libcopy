@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
@@ -23,19 +21,35 @@ int	ft_isalpha(int c)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+Alphabetic character test
+Tests for any character for which isupper(3) or islower(3) is true.
+
+
+F u n c t i o n   P r o c e s s :
 
 We check if the character is in the range of uppercase letters (65-90)
 or lowercase letters (97-122). If it is, we return 1. Otherwise, we return 0.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+int	main(int argc, char **argv)
+{
+	int	i;
 
-NAME
-    isalpha -- alphabetic character test
-	 
-DESCRIPTION
-    The isalpha() function tests for any character for which isupper(3) or
-    islower(3) is true.  The value of the argument must be representable as
-    an unsigned char or the value of EOF.
-    
+	i = 0;
+	if (argc == 1)
+		return (0);
+	while (argv[1][i])
+	{
+		if (ft_isalpha(argv[1][i]) == 1)
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		i++;
+	}
+	write(1, "\n", 1);
+	return (0);
+}
 */

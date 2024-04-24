@@ -10,17 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-/*
-  - s: Pointer to the memory block to search in.
-  - c: Character to search for.
-  - n: Number of bytes to search within.
-
-  - point: Pointer to iterate through the memory block
-  - chr: Variable to hold the character to search for
-*/
-
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	const unsigned char	*point;
@@ -63,6 +52,8 @@ block that contains the character. Otherwise, we return NULL.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <stdio.h>
+
 int main () {
    const char str[] = "https://www.tutorialspoint.com";
    const char ch = '.';

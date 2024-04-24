@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 int	numlen(int n)
 {
@@ -76,7 +75,13 @@ char	*ft_itoa(int n)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+Itoa - Integer to Ascii
+Allocates with malloc(3) and returns a string representing the integer
+received as an argument. Handles negative numbers and returns NULL if
+the allocation fails.
+
+F u n c t i o n   P r o c e s s :
 
 First we make a function to count the number of digits in the number.
 We intitialize the variable ctr to 0. Then we check if the number is
@@ -104,4 +109,44 @@ convert it to a character. After this, `n` is divided by 10. The loop continues
 until `n` is smaller than 10 and greater than -10, at which point the loop stops.
 
 We null-terminate the string and return it.
+
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	int		i;
+	char	*s;
+
+	i = -12345;
+	s = ft_itoa(i);
+	if (!s)
+		return (0);
+	printf("%s\n", s);
+	free(s);
+	
+	i = 12345;
+	s = ft_itoa(i);
+	if (!s)
+		return (0);
+	printf("%s\n", s);
+	free(s);
+
+	i = 0;
+	s = ft_itoa(i);
+	if (!s)
+		return (0);
+	printf("%s\n", s);
+	free(s);
+
+	i = -1;
+	s = ft_itoa(i);
+	if (!s)
+		return (0);
+	printf("%s\n", s);
+	free(s);
+
+	return (0);
+}
 */

@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
@@ -23,18 +21,34 @@ int	ft_isprint(int c)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n : 
+
+Printing character test (space character inclusive)
+Tests for any printing character, including space.
+
+
+F u n c t i o n   P r o c e s s :
 
 We check if the character is in the range of ASCII printable characters
 (32-126). If it is, we return 1. Otherwise, we return 0.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
 
-NAME
-     isprint -- printing character test (space character inclusive)
-DESCRIPTION
-     The isprint() function tests for any printing character, including space
-     (` ').  The value of the argument must be representable as an unsigned
-     char or the value of EOF.
+int	main(void)
+{
+	int	i;
 
+	i = 0;
+	while (i < 255)
+	{
+		if (ft_isprint(i) == 1)
+			printf("%d is a printable character\n", i);
+		else
+			printf("%d is not a printable character\n", i);
+		i++;
+	}
+	return (0);
+}
 */

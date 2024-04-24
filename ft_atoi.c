@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_atoi(const char *str)
 {
 	int	ctr;
@@ -65,6 +63,8 @@ We return the result multiplied by the sign.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	if (argc == 2)

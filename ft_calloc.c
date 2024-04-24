@@ -12,7 +12,6 @@
 
 #include "libft.h"
 
-// Function to allocate memory and initialize to zero
 void	*ft_calloc(size_t count, size_t size)
 {
 	size_t	total_size;
@@ -53,6 +52,23 @@ Finally, we return the pointer to the allocated memory.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <stdio.h>
 
+int	main(void)
+{
+	int	*test_array;
+	int	i;
 
+	test_array = ft_calloc(5, sizeof(int));
+	if (!test_array)
+	{
+		printf("Failed to allocate memory.\n");
+		return (0);
+	}
+	printf("Allocated array of size 5.\n");
+	for (i = 0; i < 5; ++i)
+		printf("Element %d: %d\n", i, test_array[i]);
+	free(test_array);
+	return (0);
+}
 */

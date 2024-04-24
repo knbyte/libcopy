@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
@@ -25,18 +23,33 @@ int	ft_isdigit(int c)
 
 F u n c t i o n   I n f o :
 
+A b o u t   F u n c t i o n :
+
+Decimal-digit character test / Tests for a decimal digit character.
+
+
+F u n c t i o n   P r o c e s s :
+
 We check if the character is in the range of ASCII digits (48-57).
 If it is, we return 1. Otherwise, we return 0.
 
-M a n u a l    P a g e    I n f o :
-NAME
-     isdigit, isnumber -- decimal-digit character test
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
 
-DESCRIPTION
-     The isdigit() function tests for a decimal digit character.  Regardless
-     of locale, this includes the following characters only:
+int	main(void)
+{
+	int	i;
 
-     ``0''         ``1''         ``2''         ``3''         ``4''
-     ``5''         ``6''         ``7''         ``8''         ``9''
-
+	i = 0;
+	while (i < 255)
+	{
+		if (ft_isdigit(i) == 1)
+			printf("%d is a digit\n", i);
+		else
+			printf("%d is not a digit\n", i);
+		i++;
+	}
+	return (0);
+}
 */

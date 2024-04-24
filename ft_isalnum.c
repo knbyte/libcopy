@@ -10,8 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 int	ft_isalnum(int c)
 {
 	if ((c >= 48 && c <= 57) || \
@@ -25,23 +23,37 @@ int	ft_isalnum(int c)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+Alphanumeric character test
+The isalnum() function tests for any character for which isalpha(3) or
+isdigit(3) is true.
+The isalnum() function returns zero if the character tests false and
+returns non-zero if the character tests true.
+
+
+F u n c t i o n   P r o c e s s :
 
 We check if the character is a digit, an uppercase letter, or a lowercase
 letter using the ascii values.  If it is, we return 1, otherwise we return 0.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
 
-NAME
-     isalnum -- alphanumeric character test
+int	main(void)
+{
+	int	i;
 
-DESCRIPTION
-     The isalnum() function tests for any character for which isalpha(3) or
-     isdigit(3) is true.  The value of the argument must be representable as
-     an unsigned char or the value of EOF.
-
-RETURN VALUES
-     The isalnum() function returns zero if the character tests false and
-     returns non-zero if the character tests true.
-     
+	i = 0;
+	while (i < 255)
+	{
+		if (ft_isalnum(i) == 1)
+			printf("%d is a alphanumeric character\n", i);
+		else
+			printf("%d is not a alphanumeric character\n", i);
+		i++;
+	}
+	return (0);
+}
 */
