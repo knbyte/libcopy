@@ -12,55 +12,43 @@
 
 #include "libft.h"
 
-/*
-Outputs the character 'c' to the given file descriptor.
-*/
 void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
 
-/* The write function takes three arguments:
-the file descriptor fd, a pointer to the buffer
+/*
 
-containing the data to be written (in this case,
-the address of the character c), and the
-number of bytes to write (which is 1 in this case,
-as we are writing only one character).*/
-/* FILE DESCRIPTOR NOTES
+~ N O T E S ~
 
-A fd is an abstract indicator (often an int) used to access a file or other 
-input/output resource. 
+A b o u t   F u n c t i o n :
 
-In Unix-like operating systems, everything is considered a
-file, including regular files, directories, sockets, pipes,
-and devices. When a file is opened, the operating
-system assigns it a unique file descriptor, which is essentially an index into
-a table maintained by the operating system called the file descriptor table.
+Outputs the character 'c' to the given file descriptor.
 
-File descriptors are typically represented by non-negative integers.
-A few common ones are:
-0: Standard input (stdin)
-1: Standard output (stdout)
-2: Standard error (stderr)
+	(A fd is an abstract indicator (often an int) used to access a file or
+	other  input/output resource, typically represented by non-negative
+	integers.
 
-When a program starts, these file descriptors are
-typically already open and connected 
-to the appropriate input and output streams. For example, when you write to file 
-descriptor 1 (stdout), you're writing to the
-standard output stream, which is usually 
-displayed in the terminal.
+	In the context of the ft_putchar_fd function, the fd parameter represents
+	the file descriptor on which you want to write the character c.)
 
-In the context of the ft_putchar_fd function,
-the fd parameter represents the file 
-descriptor on which you want to write the character c.
-This allows you to specify 
-where the output should be directed, such as to a file,
-a network socket, or a device.
+F u n c t i o n   P r o c e s s :
 
-For example, to write the character 'A' to the standard
-output (usually the terminal),
-you would call ft_putchar_fd('A', 1). Similarly, to write
-to a file, you would open the 
-file, obtain its file descriptor, and pass that file descriptor to ft_putchar_fd.
+The write function takes three argumentsthe file descriptor, a pointer to 
+the buffer containing the data to be written (in this case, the address of
+the character c), and the number of bytes to write (which is 1 in this case,
+as we are writing only one character).
+
+M a i n   F o r   T e s t i n g : */
+/*
+int	main(void)
+{
+	char	c;
+	int		fd;
+
+	c = 'a';
+	fd = 1;
+	ft_putchar_fd(c, fd);
+	return (0);
+}
 */

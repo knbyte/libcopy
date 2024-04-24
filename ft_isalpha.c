@@ -34,6 +34,8 @@ or lowercase letters (97-122). If it is, we return 1. Otherwise, we return 0.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <unistd.h>
+
 int	main(int argc, char **argv)
 {
 	int	i;
