@@ -40,7 +40,14 @@ int	ft_atoi(const char *str)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+atoi stands for "Ascii TO Integer"
+The atoi fucntion converts a string to an integer numerical representation.
+It does this by taking a string as an argument and returning the converted integer.
+
+
+F u n c t i o n   P r o c e s s :
 
 Initialise three varables, the counter/iterater at the first digit (0), 
 the result (0), and the sign as positive (1).
@@ -56,23 +63,18 @@ If it is, we multiply the result by 10 and add the digit to it.
 We then increment the iterator again.
 We return the result multiplied by the sign.
 
-
-M a n u a l    P a g e    I n f o :
-
-NAME
-	atoi -- convert ASCII string to integer
-
-SYNOPSIS
-	#include <stdlib.h>
-
-	int
-	atoi(const char *str);
-
-DESCRIPTION
-	The atoi() function converts the initial portion of the string pointed
-	to by str to int representation.
-
-ERRORS
-	The function atoi() need not affect the value of errno on an error.
-	
+M a i n   F o r   T e s t i n g : */
+/*
+int	main(int argc, char **argv)
+{
+	if (argc == 2)
+	{
+		printf("%d\n", ft_atoi(argv[1]));
+	}
+	else
+	{
+		printf("Usage: ft_atoi <string>\n");
+	}
+	return (0);
+}
 */

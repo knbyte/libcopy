@@ -25,10 +25,30 @@ int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
 		ctr++;
 	return (s1[ctr] - s2[ctr]);
 }
-// Line 26: iterate through both strings until they are not equal
-// or until the end of the string is reached.
-// If they aren't equal, return the difference
-// between the two strings at the current index.
-// If the end of the string is reached, return the
-// difference between the two strings at the current index.
-// If the end of the string is reached, return 0.
+/*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+memcmp stands for "Memory Compare"
+The memcmp function compares the first n bytes of the object pointed to by
+s1 and the object pointed to by s2.
+
+
+F u n c t i o n   P r o c e s s :
+
+We initialise three variables, ctr, which is a counter variable used to
+count through the strings, and s1 and s2, which are pointers to the
+strings to be compared.
+
+We set ctr to 0. If n is 0, we return 0, otherwise we use our counter to
+increment thorugh both strings while they are equal and the counter is
+less than n - 1 because we want to compare n bytes. We - 1 becuase we want to
+stop before we compare the n+1th byte. (If we did compare the n+1th byte, we risk
+going out of bounds of either of the strings.)
+
+Once we hit the end of the string, or once the strings are no longer equal, we
+return the difference between the two strings at the current index (ctr).
+
+*/

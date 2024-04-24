@@ -23,12 +23,19 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
-
 /*
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+memset stands for "Memory Set"
+The memset function sets the first n bytes of the string s to c,
+converted to an unsigned char.s
+It does this by taking three arguments, s, c, and n.
+
+
+F u n c t i o n   P r o c e s s :
 
 We initialize the pointer ptr to the start of the string (s).
 Then while n is decrementing by 1 and still greater than 0,
@@ -37,27 +44,11 @@ Ptr is incrimented by 1 to move to the next character.
 We return the string s.
 
 
-M a n u a l    P a g e    I n f o :
-
-NAME
-    memset -- fill a byte string with a byte value
-
-SYNOPSIS
-    #include <string.h>
-
-    void *
-    memset(void *b, int c, size_t len);
-
-DESCRIPTION
-    The memset() function writes len bytes of value c 
-	(converted to an unsigned char) to the string b.
-
-RETURN VALUES
-    The memset() function returns its first argument.
 
 
-M a i n   F u n c t i o n   F o r   T e s t i n g :
+M a i n   F o r   T e s t i n g : */
 
+/*
 int	main(void)
 {
 	char	str1[10];
@@ -72,11 +63,4 @@ int	main(void)
 
 	return (0);
 }
-
-- Declare two character arrays to hold str1 and str2.
-- Copy the content of the string literals "abcdefghi" into arrays str1 and str2.
-- Print the content of str2 before ft_memset
-- Set the first 5 characters of str2 to 'x'
-- Print the contect of str2 after ft_memset.
-
 */

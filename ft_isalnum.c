@@ -31,6 +31,7 @@ We check if the character is a digit, an uppercase letter, or a lowercase
 letter using the ascii values.  If it is, we return 1, otherwise we return 0.
 
 M a n u a l    P a g e    I n f o :
+
 NAME
      isalnum -- alphanumeric character test
 
@@ -42,4 +43,5 @@ DESCRIPTION
 RETURN VALUES
      The isalnum() function returns zero if the character tests false and
      returns non-zero if the character tests true.
+     
 */

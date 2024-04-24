@@ -38,6 +38,31 @@ void	*ft_memchr(const void *s, int c, size_t n)
 }
 
 /*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+memchr stands for "Memory Character Copy"
+The memchr function locates the first occurrence of c (converted to an unsigned
+char) in the first n bytes of the object pointed to by s.
+
+
+F u n c t i o n   P r o c e s s :
+
+We initialize two variables, *point, which is a pointer to the memory block and
+chr, which is the character to search for. We set point to s and chr to c. 
+For chr we specify the type as an unsigned char.
+
+We then iterate through the memory block pointed to by point until we reach the
+end of the block or until we find the character to search for.
+
+If we find the character to search for, we return the pointer to the memory
+block that contains the character. Otherwise, we return NULL.
+
+
+M a i n   F o r   T e s t i n g : */
+/*
 int main () {
    const char str[] = "https://www.tutorialspoint.com";
    const char ch = '.';
@@ -49,26 +74,4 @@ int main () {
 
    return(0);
 }
-*/
-
-/*
-NAME
-    memchr -- locate byte in byte string
-
-LIBRARY
-    Standard C Library (libc, -lc)
-
-SYNOPSIS
-    #include <string.h>
-
-     void *
-    memchr(const void *s, int c, size_t n);
-
-DESCRIPTION
-    The memchr() function locates the first occurrence of c (converted to an
-    unsigned char) in string s.
-
-RETURN VALUES
-    The memchr() function returns a pointer to the byte located, or NULL if
-    no such byte exists within n bytes.
 */

@@ -22,35 +22,33 @@ size_t	ft_strlen(const char *str)
 	return (ctr);
 }
 
-/*
 
+/*
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+strlen stands for "String Length"
+The strlen function computes the length of the string s.
+It does this by taking one argument, s, and returning the number of characters that precede the terminating NUL character.
+
+
+F u n c t i o n   P r o c e s s :
 
 We initialize a counter variable ctr to 0. We then iterate through the
 string, incrementing the counter each time we encounter a character. We
 then return the value of the counter.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+int		main(void)
+{
+	char	*test_string;
+	int		len;
 
-NAME
-     strlen -- find length of string
-
-SYNOPSIS
-     #include <string.h>
-
-     size_t
-     strlen(const char *s);
-
-DESCRIPTION
-     The strlen() function computes the length of the string s. 
-	 The strnlen() function attempts to compute the length of s, but never
-     scans beyond the first maxlen bytes of s.
-
-RETURN VALUES
-     The strlen() function returns the number of characters that precede 
-	 the terminating NUL character.  The strnlen() function
-     returns either the same result as strlen() or maxlen, whichever is smaller.
-
+	test_string = "This is a test string";
+	len = ft_strlen(test_string);
+	printf("The length of the string \"%s\" is %d\n", test_string, len);
+	return (0);
+}
 */

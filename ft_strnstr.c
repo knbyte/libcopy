@@ -41,3 +41,18 @@ of a substring within a given string, up to a specified length.
 It returns a pointer to the first occurrence of the substring
 sin the string, or NULL if the substring is not found.
 */
+
+/*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+strnstr stands for "String N String"
+The strnstr function locates the first occurrence of the substring
+s2 in the string s1, up to n bytes of s1.
+
+
+F u n c t i o n   P r o c e s s :
+
+*/

@@ -34,12 +34,48 @@ char	*ft_strdup(const char *src)
 }
 
 /*
- MANUAL EXERPT:
 
- The strdup() function allocates sufficient memory for a copy of the
- string s1, does the copy, and returns a pointer to it. 
+~ N O T E S ~
 
- The strndup() function copies at most n characters from the string s1
- always NUL terminating the copied string.
+A b o u t   F u n c t i o n :
 
+strdup stands for "String Duplicate"
+The strdup function allocates sufficient memory for a copy of
+the string s1, does the copy, and returns a pointer to it.
+
+F u n c t i o n   P r o c e s s :
+
+We initialize two variables, ctr, which is a counter variable used to 
+ount the number of characters in the string, and dest, which is a
+pointer to the allocated memory.
+
+We set ctr to 0, to count the number of characters in the string, and count
+through the string until we reach the null character.
+
+We then allocate sufficient memory for a copy of the string using the
+malloc function.  If the memory allocation fails, we return NULL.
+
+We then reset the counter to 0 to count through the string again and
+copy each character into the allocated memory.  Finally, we set the
+null character to the end of the string and return the allocated memory.
+
+M a i n   F o r   T e s t i n g : */
+/*
+int	main(void)
+{
+	char	*test_string;
+	char	*dup_string;
+
+	test_string = "Hello, world!";
+	dup_string = ft_strdup(test_string);
+	if (dup_string == NULL)
+	{
+		printf("Failed to allocate memory for duplicate string.\n");
+		return (0);
+	}
+	printf("Original string: %s\n", test_string);
+	printf("Duplicate string: %s\n", dup_string);
+	free(dup_string);
+	return (0);
+}
 */

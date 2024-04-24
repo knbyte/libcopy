@@ -33,3 +33,16 @@ It returns an integer less than, equal to, or
 greater than zero if str1 is found, respectively,
 to be less than, to match, or be greater than str2.
 */
+
+/*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+strncmp stands for "String N Character Compare"
+The strncmp function compares at most n bytes of the string s1 and the string s2.
+
+F u n c t i o n   P r o c e s s :
+
+*/

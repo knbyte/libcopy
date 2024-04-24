@@ -34,3 +34,19 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[ctr]);
 	return (NULL);
 }
+
+
+/*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+strchr stands for "String Character Copy"
+The strchr function locates the first occurrence of c (converted to an unsigned
+char) in the string s.
+
+
+F u n c t i o n   P r o c e s s :
+
+*/

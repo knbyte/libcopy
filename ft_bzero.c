@@ -23,7 +23,13 @@ void	ft_bzero(void *s, unsigned long n)
 
 ~ N O T E S ~
 
-F u n c t i o n   I n f o :
+A b o u t   F u n c t i o n :
+
+bzero stands for "Byte ZERO"
+The bzero function sets the first n bytes of the string s to zeroes.
+
+
+F u n c t i o n   P r o c e s s :
 
 We initialize a character pointer (str) to the start of the string (s).
 
@@ -41,19 +47,15 @@ The loop writes the value of '\0' to each character of the string (s).
 The effect of this function is that it sets the first n characters of the
 string (s) to zeroes, which is the same as the standard bzero() function.
 
-M a n u a l    P a g e    I n f o :
+M a i n   F o r   T e s t i n g : */
+/*
+int	main(void)
+{
+	char	str[] = "Hello, World!\n";
 
-NAME
-	bzero -- write zeroes to a byte string
+	ft_bzero(str, 3);
+	printf("%s", str);
 
-SYNOPSIS
-	#include <strings.h>
-
-	void
-	bzero(void *s, size_t n);
-
-DESCRIPTION
-	The bzero() function writes n zeroed bytes to the string s.  If n is
-	zero, bzero() does nothing.
-	
+	return (0);
+}
 */

@@ -12,10 +12,6 @@
 
 #include "libft.h"
 
-/*Function to copy and concatenate strings
-Copies up to destsize - 1 characters
-Returns the length of src, null-terminating the result*/
-
 int	ft_strlcpy(char *dest, const char *src, size_t destsize)
 {
 	size_t	srcsize;
@@ -34,3 +30,51 @@ int	ft_strlcpy(char *dest, const char *src, size_t destsize)
 	}
 	return (srcsize);
 }
+
+/*
+
+~ N O T E S ~
+
+A b o u t   F u n c t i o n :
+
+strlcpy stands for "String Length Copy"
+It is a function to copy and concatenate strings.
+The strlcpy function copies at most n characters from the string s2 into
+the string s1. It returns the length of src, null-terminating the result.
+
+F u n c t i o n   P r o c e s s :
+
+We delcare a srcsize variable to hold the length of the string src, which we
+define as ft_strlen(src). We declare a ctr variable to count the number of 
+characters copied into dest which we define as 0.
+
+We check if the destination buffer is large enough to accommodate the
+concatenation. If it is, we sue a while loop which runs as long as we
+are counting through the string src and the counter is less than the
+destination buffer size. While the loop is running, we increment the
+counter by 1, and copy the current character from src to dest.
+
+We null-terminate the string and return the length of src.
+
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+
+int	main(void)
+{
+	char	dest[100];
+	char	src[50];
+	int		ret;
+
+	strcpy(src, "Hello, world!");
+	memset(dest, 0, sizeof(dest);
+
+	ret = ft_strlcpy(dest, src, sizeof(dest));
+
+	printf("ret: %d\n", ret);
+ 
+	printf("dest: %s\n", dest);
+
+	return (0);
+}
+*/
