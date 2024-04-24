@@ -54,15 +54,20 @@ M a i n   F o r   T e s t i n g : */
 /*
 #include <stdio.h>
 
-int main () {
-   const char str[] = "https://www.tutorialspoint.com";
-   const char ch = '.';
-   char *ret;
+int					main(int argc, char **argv)
+{
+	int				c;
+	char			s[] = "abcdef";
+	void			*result;
 
-   ret = memchr(str, ch, strlen(str));
-
-   printf("String after |%c| is - |%s|\n", ch, ret);
-
-   return(0);
+	if (argc != 3)
+		return (0);
+	c = atoi(argv[1]);
+	result = ft_memchr(s, c, strlen(s));
+	if (result)
+		printf("Found %c at %p\n", c, result);
+	else
+		printf("Did not find %c\n", c);
+	return (0);
 }
 */

@@ -25,6 +25,7 @@ int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
 		ctr++;
 	return (s1[ctr] - s2[ctr]);
 }
+
 /*
 
 ~ N O T E S ~
@@ -51,4 +52,23 @@ going out of bounds of either of the strings.)
 Once we hit the end of the string, or once the strings are no longer equal, we
 return the difference between the two strings at the current index (ctr).
 
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+
+int		main(int argc, char **argv)
+{
+	char	s1[] = "abcdef";
+	char	s2[] = "abcghi";
+	int		res;
+
+	if (argc != 3)
+	{
+		printf("Usage: %s <str1> <str2>\n", argv[0]);
+		return (0);
+	}
+	res = ft_memcmp(s1, s2, (unsigned long)ft_strlen(argv[1]));
+	printf("'%s' '%s': %d\n", s1, s2, res);
+	return (0);
+}
 */

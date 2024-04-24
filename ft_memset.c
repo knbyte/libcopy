@@ -43,12 +43,11 @@ we set the character pointed to by ptr to the value c.
 Ptr is incrimented by 1 to move to the next character.
 We return the string s.
 
-
-
-
 M a i n   F o r   T e s t i n g : */
 
 /*
+#include <stdio.h>
+
 int	main(void)
 {
 	char	str1[10];

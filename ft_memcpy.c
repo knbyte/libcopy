@@ -45,4 +45,19 @@ the pointer to a char and increment the pointers by 1 byte.
 
 We return the pointer to the destination string.
 
+M a i n   F o r   T e s t i n g : */
+/*
+#include <stdio.h>
+
+int		main(void)
+{
+	char	dest[100];
+	char	src[] = "Hello, world!";
+
+	ft_memset(dest, 0, 100);
+	ft_memcpy(dest, src, ft_strlen(src));
+	printf("%s\n", dest);
+
+	return (0);
+}
 */
