@@ -6,9 +6,11 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:13:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:57:00 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:26:31 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memset(void *s, int c, size_t n)
 {
@@ -21,6 +23,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (s);
 }
+
 /*
 
 ~ N O T E S ~

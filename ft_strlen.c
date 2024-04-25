@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:50:04 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:32:29 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ size_t	ft_strlen(const char *str)
 	return (ctr);
 }
 
-
 /*
 ~ N O T E S ~
 
@@ -30,7 +29,8 @@ A b o u t   F u n c t i o n :
 
 strlen stands for "String Length"
 The strlen function computes the length of the string s.
-It does this by taking one argument, s, and returning the number of characters that precede the terminating NUL character.
+It does this by taking one argument, s, and returning the number of characters
+that precede the terminating NUL character.
 
 
 F u n c t i o n   P r o c e s s :

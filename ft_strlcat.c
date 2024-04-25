@@ -6,17 +6,12 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:07:29 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 16:30:45 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:31:43 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-Function to copy and concatenate strings
-Copies up to destsize - 1 characters
-Returns the length of src, null-terminating the result
-*/
 int	ft_strlcat(char *dest, const char *src, size_t destsize)
 
 {
@@ -35,18 +30,6 @@ int	ft_strlcat(char *dest, const char *src, size_t destsize)
 	return (total_len);
 }
 
-/*The ft_strlcat function takes a destination buffer dest, a source
-string src, and the size of the destination buffer destsize.
-It calculates the length of dest and src and checks if the destination
-buffer is large enough to accommodate the concatenation.
-If the destination buffer is too small, it returns the length that
-would have been copied if the buffer were large enough.
-Otherwise, it copies characters from src to dest, ensuring null
-termination, and returns the total length of the concatenated string.*/
-
-
-
-
 /*
 
 ~ N O T E S ~
@@ -54,8 +37,8 @@ termination, and returns the total length of the concatenated string.*/
 A b o u t   F u n c t i o n :
 
 strlcat stands for "String Length Concatenate"
-The strlcat function appends the string s2 to the string s1, always NUL terminating
-the resulting string.
+The strlcat function appends the string s2 to the string s1, always
+NUL terminating the resulting string.
 
 F u n c t i o n   P r o c e s s :
 

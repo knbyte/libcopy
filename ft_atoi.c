@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:12:14 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:37:14 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 23:16:47 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ A b o u t   F u n c t i o n :
 
 atoi stands for "Ascii TO Integer"
 The atoi fucntion converts a string to an integer numerical representation.
-It does this by taking a string as an argument and returning the converted integer.
+It does this by taking a string as an argument and returning the converted
+integer.
 
 
 F u n c t i o n   P r o c e s s :
@@ -61,20 +62,28 @@ If it is, we multiply the result by 10 and add the digit to it.
 We then increment the iterator again.
 We return the result multiplied by the sign.
 
-M a i n   F o r   T e s t i n g : */
+M a i n   F o r   Tß e s t i n g :
+
+cc -Wall -Werror -Wextra ft_atoi.c
+
+./a.out
+*/
 /*
 #include <stdio.h>
-
-int	main(int argc, char **argv)
+ 
+int main(void)
 {
-	if (argc == 2)
-	{
-		printf("%d\n", ft_atoi(argv[1]));
-	}
-	else
-	{
-		printf("Usage: ft_atoi <string>\n");
-	}
-	return (0);
+    int testpos;
+	int	testneg;
+    char *pos;
+	char *neg;
+ 
+    pos = " \t \n 42";
+	neg = " \t \n -42";
+    testpos = ft_atoi(pos);
+	testneg = ft_atoi(neg);
+
+    printf("Positive Number Test = %d\n",testpos);
+	printf("Negative Number Test = %d\n",testneg);
 }
 */

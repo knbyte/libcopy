@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:10:48 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 14:58:13 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:37:27 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
 
 /*
 

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:37:19 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/26 01:10:27 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,24 +39,50 @@ This works because the bzero() function only writes zero bytes to the string.
 The pointer (str) is incremented after each write, so it starts at the first
 character of the string (s) and goes up to the last character.
 
-The loop will stop when n reaches zero, because the loop will not execute
-if n is equal to zero.
+ft_bzero
+- Takes two arguments:
+	- void *s: Pointer to a memory block (any data type).
+	- unsigned long n: Number of bytes to set to zero.
 
-The loop writes the value of '\0' to each character of the string (s).
+- Declares a char pointer str and assigns the casted value of s to it
+	(treats s as a character array).
 
-The effect of this function is that it sets the first n characters of the
-string (s) to zeroes, which is the same as the standard bzero() function.
+- Initiates a while loop that continues as long as n is greater than zero
+	(post-decrement n--).
+	- Inside the loop:
+		- Sets the character pointed to by str to the null terminator (\0).
+		- Increments str to point to the next character in the memory block.
+		- Post-decrement str ensures it traverses the memory block character
+			by character
+- Effectively sets the first n bytes of the memory block pointed to by s to zero.
 
 M a i n   F o r   T e s t i n g : */
+
 /*
+comp ft_bzero.c ft_putstr_fd.c
+
 #include <stdio.h>
+#include "libft.h"
+
+void	ft_putstr(char *str, int len)
+{
+	int	ctr;
+	
+	ctr = 0;
+	while (ctr < len)
+		write(1, &str[ctr++], 1);
+	write(1, "\n", 1);
+}
 
 int	main(void)
 {
-	char	str[] = "Hello, World!\n";
+	char str[] = "Bye World!";
 
-	ft_bzero(str, 3);
-	printf("%s", str);
+	ft_putstr_fd("Before ft_bzero:", 1);
+	ft_putstr(str, 11);
+	ft_bzero(str, 5);
+	ft_putstr_fd("After ft_bzero, 5:", 1);
+	ft_putstr(str, 11);
 
 	return (0);
 }

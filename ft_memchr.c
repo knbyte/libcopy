@@ -6,9 +6,11 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:12:37 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 16:58:37 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:22:59 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {

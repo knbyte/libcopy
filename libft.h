@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:13:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:06:46 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:36:58 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	ft_bzero(void *s, unsigned long n);
 void	*ft_memset(void *s, int c, size_t n);
 void	*ft_calloc(size_t count, size_t size);
 void	ft_bzero(void *s, unsigned long n);
-int		ft_memcmp(const void *str1, const void *str2, unsigned long n);
+int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);

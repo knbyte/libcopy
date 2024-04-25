@@ -6,9 +6,11 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:09:45 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 14:45:26 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:30:58 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -25,7 +27,6 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)&s[ctr]);
 	return (NULL);
 }
-
 
 /*
 
@@ -68,7 +69,7 @@ int	main(int argc, char **argv)
 	if (!ptr)
 		printf("%s was not found in %s\n", argv[2], str);
 	else
-		printf("The first occurence of %s in %s is at %p\n", argv[2], str, (void*)ptr);
+		printf("%s first occurs in %s is at %p\n", argv[2], str, (void*)ptr);
 	return (0);
 }
 */

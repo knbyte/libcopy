@@ -6,13 +6,15 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:12:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 14:43:52 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:28:28 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_memcmp(const void *str1, const void *str2, unsigned long n)
+#include "libft.h"
+
+int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	unsigned long	ctr;
+	size_t			ctr;
 	unsigned char	*s1;
 	unsigned char	*s2;
 

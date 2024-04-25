@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:18:19 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:08:03 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/25 18:34:13 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,15 +56,15 @@ index of the trimmed string, and end, which is the ending index of the trimmed
 string.
 
 If s1 or 'set' are NULL, we return NULL. We set start to 0.  We then loop through
-the string 's1' starting at index 'start' and While the current character is not NULL
-and is present in the string 'set'(we use strchr to check), increment 'start'.
+the string 's1' starting at index 'start' and While the current character is not
+NULL and is present in string 'set'(using strchr to check), increment 'start'.
 
 We set the end to the length of the string 's1'. We then loop through the string
 's1' starting at index 'end' and While the current character is not NULL
-and is present in the string 'set'(we use strchr to check), decrement 'end'.
+and is present in the string 'set'(using strchr to check), decrement 'end'.
 
-If 'end' is greater than 'start', we set 'len' to the difference between 'end' and
-'start'. Otherwise, we set 'len' to 0.
+If 'end' is greater than 'start', we set 'len' to the difference between
+'end' and 'start'. Otherwise, we set 'len' to 0.
 
 We allocate memory for the trimmed string using malloc(3). If 'trimmed' is NULL,
 we return NULL. We copy the substring 's1' starting at index 'start' and ending
