@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:38 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 23:14:43 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/30 00:03:14 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,12 @@ F u n c t i o n   P r o c e s s :
     - Inside the loop:
         - This line performs the actual copy operation:
             - Both dest and src are cast to char* to treat them as character
-				pointers to char pointers for byte-wise access.
+				pointers to char pointers to access them 1 byte at a time.
             - The dereferencing (*) operator accesses the value at the memory
 				location pointed to by each pointer.
             - The assignment = copies the value from the source byte
 				(*(char *)src) to the destination byte (*(char *)dest).
-            - The post-increment moves both dest and src forward by 1 byte after
-				the copy.
+            - The post-increment moves both dest and src up while n is counting down.
 
 - Returning the Pointer
     - After the loop completes, the function returns dest_ptr which holds the
