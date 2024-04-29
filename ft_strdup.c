@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:14:10 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:59:12 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:46:53 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,19 +45,38 @@ the string s1, does the copy, and returns a pointer to it.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize two variables, ctr, which is a counter variable used to 
-ount the number of characters in the string, and dest, which is a
-pointer to the allocated memory.
+- Variable Setup
+    - ctr: counter initialized to 0, tracking string length.
+    - dest: pointer that will hold the address of the
+		allocated memory for the copied string.
 
-We set ctr to 0, to count the number of characters in the string, and count
-through the string until we reach the null character.
+- Calculating String Length:
+    - The function first uses a while loop to iterate through the source string
+		and count the number of characters (excluding the null terminator).
+	- This loop continues as long as the character at the current index (ctr)
+		in src is not the null terminato. The counter ctr is incremented
+		within the loop to keep track of the length.
 
-We then allocate sufficient memory for a copy of the string using the
-malloc function.  If the memory allocation fails, we return NULL.
+- Memory Allocation:
+    - Once the loop exits, the ctr variable holds the length of the string.
+    - enough memory for a copy of the string is allocated with malloc
+		- It allocates space for ctr characters (plus 1 for the null terminator).
+    - If malloc fails to allocate memory, the function returns NULL.
 
-We then reset the counter to 0 to count through the string again and
-copy each character into the allocated memory.  Finally, we set the
-null character to the end of the string and return the allocated memory.
+- Copying the String:
+    - The function resets the counter ctr to 0 again.
+    - It then uses another while loop to iterate through the string (src)
+		and copy each character into the allocated memory pointed to by dest.
+       - Inside the loop:
+            - The character from the current position is copied to the
+				corresponding position in dest.
+            - ctr is incremented to move to the next character in both strings.
+
+- Null Termination & Returning Result
+    - After the copying loop finishes, a null terminator is
+		added to the end of the string.
+	- Returns the pointer dest which points to the newly allocated memory
+		containing the complete copy of the source string src
 
 M a i n   F o r   T e s t i n g : */
 /*

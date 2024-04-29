@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:13:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:46:30 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 22:30:28 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,28 @@ Then while n is decrementing by 1 and still greater than 0,
 we set the character pointed to by ptr to the value c.
 Ptr is incrimented by 1 to move to the next character.
 We return the string s.
+
+
+Variable Setup:
+
+    ptr: This is a pointer variable declared as unsigned char*. It's initialized to point to the beginning of the memory block represented by s using a cast (unsigned char *)s. This cast ensures we work with bytes (represented by unsigned char) when setting memory.
+
+Looping and Setting Values:
+
+    The function uses a while loop to iterate n times:
+        n-- > 0: This pre-decrement loop condition ensures n is decremented before each iteration and the loop continues as long as n is greater than 0.
+
+Setting Character Value:
+
+    Inside the loop:
+        *ptr++ = (unsigned char)c: This line performs three actions:
+            *ptr: Dereferences the ptr pointer, effectively accessing the current byte in the memory block.
+            = (unsigned char)c: Assigns the value of c (converted to unsigned char) to the current byte. The cast ensures we're assigning a single byte value.
+            ptr++: Increments ptr after the assignment, moving it to point to the next byte in the memory block for the next iteration.
+
+Returning the Pointer:
+
+    After the loop completes (all n bytes have been set), the function returns the original pointer s. This is because s already points to the beginning of the modified memory block.
 
 M a i n   F o r   T e s t i n g : */
 /*

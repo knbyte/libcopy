@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:07:29 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:59:36 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:52:38 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,23 +42,40 @@ NUL terminating the resulting string.
 
 F u n c t i o n   P r o c e s s :
 
-We declare three variables, dest_len, which is the length of the string
-dest, src_len, which is the length of the string src, and total_len, which
-is the length of the concatenated string.
+- Variable Setup
+    - dest_len: Stores length of string dest found using ft_strlen.
+    - src_len: Stores length of string src found using ft_strlen.
+    - total_len: total length of the concatenated string (dest_len + src_len).
 
-We check if the destination buffer is large enough to accommodate the
-concatenation.
+- Handling Empty Inputs and Zero Buffer Size
+    - The function checks if dest/src are NULL, and if destsize is zero,
+		if both conditions are true, the function returns 0.
 
-We define dest_len as ft_strlen(dest) and src_len as ft_strlen(src).
-We define total_len as dest_len + src_len.
+- Calculating Concatenated String Length
+    - The function calculates the total_len by adding the lengths of
+		the destination and source strings.
 
-We check if the destination buffer is too small to accommodate the
-concatenation. If it is, we return the length that would have been
-copied if the buffer were large enough.
+- Checking Destination Buffer Size
+    - The function checks if the existing length of dest_len is already equal to
+		or greater than the destination buffer size (destsize).
+        - If so, it means there's no space in the destination buffer to
+			accommodate the entire source string.
 
-We use the ft_strlcpy function to copy up to destsize - 1 characters
-from src to dest, ensuring null termination. We return the total length
-of the concatenated string.
+- Handling Insufficient Buffer Size
+    - If the destination buffer is too small (dest_len >= destsize), the function
+		returns a combined length (src_len + destsize). This value represents the
+		total length that would have been achieved if the destination buffer
+		had enough space.
+
+- Safe Concatenation and Null Termination
+	-  If the destination buffer has sufficient space (dest_len < destsize), 
+   		the function calls ft_strlcpy to perform safe concatenation.
+	- ft_strlcpy copies characters from src to dest + dest_len (the end of the
+		existing content in dest).
+    - The max number of characters copied is limited to destsize - dest_len - 1
+		(Ensures space for null terminator).
+    - After copying, the function returns the total_len (calculated earlier),
+		which represents the length of the concatenated string.
 
 M a i n   F o r   T e s t i n g : */
 /*

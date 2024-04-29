@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:21 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 19:03:32 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:19:33 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,31 @@ the string s1. It returns the length of src, null-terminating the result.
 
 F u n c t i o n   P r o c e s s :
 
-We delcare a srcsize variable to hold the length of the string src, which we
-define as ft_strlen(src). We declare a ctr variable to count the number of 
-characters copied into dest which we define as 0.
-
-We check if the destination buffer is large enough to accommodate the
-concatenation. If it is, we sue a while loop which runs as long as we
+If it is, we sue a while loop which runs as long as we
 are counting through the string src and the counter is less than the
 destination buffer size. While the loop is running, we increment the
 counter by 1, and copy the current character from src to dest.
 
 We null-terminate the string and return the length of src.
+
+- Variable Setup
+    - srcsize: stores the length src found using ft_strlen.
+    - ctr: tracking of the number of characters copied to the destination
+		string dest, initialized to 0.
+
+- Destination Buffer Check
+    - The function first checks for space in destsize
+
+- Looping for Character Copying:
+    - If destsize has space, the function uses a while loop with two conditions:
+        - src[ctr]: checks we are not at the end of the string
+        - ctr < (destsize - 1): ensures the counter stays within the safe limit
+			of the destination buffer including space for null terminator ( - 1)
+    - Inside the loop:
+        - Copies character from position in src to corresponding position in dest
+        - Increments the counter to move to the next character in both strings
+
+- Null Termination and Return:
+	- After loop completes a null terminator is added to the ctr position in dest
+    - Returns srcsize
 */

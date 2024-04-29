@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 21:31:47 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:47:59 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:59:22 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,24 @@ Outputs the string 's' to the given file descriptor.
 
 F u n c t i o n   P r o c e s s :
 
-Starting at the beginning of the string and looping as long as the current
-character isn't null, we write the current character to the file descriptor
-and move on to the next character in the string.
+- Looping through the String:
+	- While loop to iterates through characters in string s until the
+		string ends.
+	
+- Writing to File Descriptor:
+   -  Inside the loop:
+        - write(fd, s, 1): This line is the core functionality.
+            - fd: This is the file descriptor representing the output
+				destination (e.g., standard output, a file).
+            - s: This is the pointer to the current character in the string s.
+            - 1: This indicates the number of bytes to write. In this case,
+				we want to write a single character.
+        - This write system call attempts to write the character pointed to b
+			s to the file descriptor fd.
+
+- Moving to the Next Character:
+    - After attempting to write the character, the s is incremented (s++).
+		This moves s to point to the next character in the string,
+		effectively preparing for the next iteration of the loop.
+	
 */

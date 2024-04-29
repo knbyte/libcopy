@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 19:03:49 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:25:35 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,6 @@ F u n c t i o n   P r o c e s s :
 - Handle Empty String or NULL Function Pointer
     - The function checks if the input string or the function pointer is NULL.
     - If either is NULL, it returns NULL, indicating an error or invalid input.
-
-
-
-We then allocate memory for the resulting string and use the ft_strlen
-function to get the length of the string + 1 for the null terminator.
-We use a while loop to iterate through the string.
-
-We check if the string and the function pointers are not NULL, then
-set the counter to 0. We use a while loop to iterate through the string and
-apply the function to each character. We then increment the counter and repeat.
-
-We assign the null terminator to the end of the string and return the
-resulting string.
 
 - Allocate Memory for Resulting String
     - The function calls ft_strlen to get the length of 's'.

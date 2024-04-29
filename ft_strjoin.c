@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:14:59 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 19:03:40 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:04:59 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,30 @@ If the allocation fails, the function returns NULL.
 
 F u n c t i o n   P r o c e s s :
 
-We declare three variables, result, s1_len, and s2_len. We initialize
-s1_len to the length of the string s1, and s2_len to the length of
-the string s2. We allocate memory for the result string using the
-malloc function, we allocate enough space for the contents of s1 and s2.
-If the result is NULL, we return NULL. Otherwise, we use the ft_strlcpy
-function to copy the contents of s1 into the result string. We add 1 to
-s1_len to account for the null terminator. We then use the ft_strlcpy
-function to do the same with s2, lastly we return the result string.
+- Variable Setup
+	- result: stores address of the string holding the concatenation of s1/s2.
+    - s1_len: stores the length of the string s1 found using ft_strlen.
+    - s2_len: stores the length of the string s2 found using ft_strlen.
 
+- Memory Allocaxtion
+    - calculates the total space required for the concatenated string by adding
+		s1_len, s2_len, and 1 (for the null terminator).
+    - Uses malloc to allocate memory of this size and casts the returned pointer
+		to char* for compatibility.
+    - If malloc fails to allocate memory, the function returns NULL.
+
+- Safe Concatenation with ft_strlcpy
+    - The function uses ft_strlcpy twice to perform safe concatenation:
+        - The first call copies the contents of s1 into the beginning of the
+			newly allocated result string. The size limit passed to ft_strlcpy is
+			s1_len + 1 to ensure null termination for the copied s1 content.
+        - The second call copies the contents of s2 starting from the position
+			result + s1_len. This effectively appends s2 after s1 in the result
+			string. The size limit passed to ft_strlcpy in this call is
+			s2_len + 1 for similar reasons.
+
+- Return Result
+	- After successful concatenation, the function returns the pointer result
+		which points to the newly allocated string containing the combined
+		content of s1 and s2.
 */

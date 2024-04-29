@@ -6,13 +6,13 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:03 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:49:00 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:43:43 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	numlen(int n)
+int	ft_digit_count(int n)
 {
 	int	ctr;
 
@@ -27,7 +27,7 @@ int	numlen(int n)
 	return (ctr + 1);
 }
 
-char	*strrev(char *str)
+char	*ft_strrev(char *str)
 {
 	int		ctr1;
 	int		ctr2;
@@ -55,7 +55,7 @@ char	*ft_itoa(int n)
 	sign = 1;
 	if (n < 0)
 		sign = -1;
-	res = (char *)malloc(numlen(n) + 1);
+	res = (char *)malloc(ft_digit_count(n) + 1);
 	if (!res)
 		return (NULL);
 	ctr = 0;
@@ -68,7 +68,7 @@ char	*ft_itoa(int n)
 	if (sign == -1)
 		res[ctr++] = '-';
 	res[ctr] = '\0';
-	return (strrev(res));
+	return (ft_strrev(res));
 }
 
 /*
@@ -83,31 +83,61 @@ the allocation fails.
 
 F u n c t i o n   P r o c e s s :
 
-First we make a function to count the number of digits in the number.
-We declare the variable ctr and set itto 0. Then we check if the number is
-negative. If it is, we increment the ctr by 1. We then loop through
-the number until it reaches 0. Each time we divide the number by 10,
-we increment the ctr by 1. Finally, we return the ctr.
+ft_digit_count:  counts the number of digits in an integer
+	- initialises a counter (ctr) to 0
+	- checks if the number is negative.
+		- If so, increments ctr by 1 to account for the sign.
+	- Loops while n is greater than 9 or less than -9 (to allow multi-digit nbrs)
+	- Each iteration divided n by 10 (removing last digit and incrementing ctr)
+	- Returns ctr + 1 to account for the last digit (not included in the loop)
+		and the potential sign.
 
-We then make a function to reverse the string. We declare three
-variables ctr1 (set to 0), ctr2 (set to the length of the string minus 1), and
-temp as a temporary variable. We then loop through the string until
-ctr1 is less than ctr2. We then swap the characters at ctr1 and
-ctr2. We then increment ctr1 and decrement ctr2. Finally, we return
-the string.
 
-Lastly we have our itoa function. We declare three variables,
-*res (result), ctr, and sign. We set sign to 1, check if the number
-is negative. If it is, we set the sign to -1. We then allocate memory
-for the string using the numlen function, If the allocation fails,
-we return NULL. We then initialize the ctr to 0. In a while loop that
-runs as long as the number is greater than 9 or less than -9, we
-add the remainder of `n` divided by 10 to the result string at the current
-index (ctr). This remainder is multiplied by the `sign`, which is either 1 
-or -1, depending on whether `n` is negative. The result is shifted by '0' to
-convert it to a character. After this, `n` is divided by 10. The loop continues
-until `n` is smaller than 10 and greater than -10, at which point the loop stops.
+ft_strrev:  reverses the string. 
+ 	- Initializes two counter variables:
+		- ctr1 starts at 0 (index of the beginning of the string).
+    	- ctr2 starts at the last index (ft_strlen(str) - 1).
 
-We null-terminate the string and return it.
+	- Loops while ctr1 is less than ctr2 (iterates through half the string).
 
+    - Uses a temporary variable temp to swap the characters at ctr1 and ctr2
+		positions in the string. Increments ctr1 and decrements ctr2 to move
+		towards the middle of the string.
+
+	- Returns the modified string str with characters reversed.
+
+
+ft_itoa:  converts an integer to a string
+
+	- Initializes variables:
+		- res: Pointer to a character array that will store the resulting string.
+    	- ctr: Counter variable used for indexing the resulting string.
+    	- sign: integer variable storing the sign (+ or -).
+
+	- Sets sign to 1, check if n is negative, if so changesign to -1.
+
+	- Allocates memory for string using ft_count_digit + 1 for null terminator.
+		- If allocation fails returns NULL.
+
+	- Initializes ctr to 0.
+	- Loops while n is greater than 9 or less than -9
+    	- Calculates the remainder of n divided by 10 (the last digit).
+    	- Multiplies the remainder by sign to account for the negative sign.
+    - Adds '0' to the remainder (converts it to an ASCII character).
+    - Stores the calculated character in the resulting string at index ctr.
+    - Increments ctr to move to the next position in the resulting string.
+    - Divides n by 10 (effectively removing the last digit).
+
+	- Handles the last digit (outside the loop):
+		- Calculates the character for the last digit same way as above loop did.
+    	- Stores it in the resulting string at index ctr.
+
+	- If n was negative, adds '-' to the beginning of the resulting string.
+	
+	- Adds the null terminator at the end of the resulting string
+	
+	- Calls ft_strrev to reverse the resulting string because digits
+		were appended in the reverse order during the loop.
+	
+	- Returns the resulting string.
 */
