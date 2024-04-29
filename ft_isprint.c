@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:52:25 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:42:55 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:08:38 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,21 +34,22 @@ We check if the character is in the range of ASCII printable characters
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <unistd.h>
 #include <stdio.h>
 
-int	main(void)
+int    main(void)
 {
-	int	i;
-
-	i = 0;
-	while (i < 255)
-	{
-		if (ft_isprint(i) == 1)
-			printf("%d is a printable character\n", i);
-		else
-			printf("%d is not a printable character\n", i);
-		i++;
-	}
-	return (0);
+	int	chr = 'a';
+	int	nbr = '1';
+	int	sign = '+';
+	int	dot = '.';
+	int	sp = ' ';
+	int	nwli = '\n'; 
+    printf("a: %d\n", ft_isprint(chr));
+	printf("1: %d\n", ft_isprint(nbr));
+	printf("+: %d\n", ft_isprint(sign));
+	printf(".: %d\n", ft_isprint(sp));
+	printf(" : %d\n", ft_isprint(dot));
+	printf("/n: %d\n", ft_isprint(nwli));
 }
 */

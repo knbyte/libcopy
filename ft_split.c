@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:24:04 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/26 00:17:48 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:13:06 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -163,31 +163,23 @@ ft_split
 - Returns the sub_strings array containing pointers to the extracted substrings.
 
 M a i n   F o r   T e s t i n g : 
-
-cc -Wall -Werror -Wextra ft_split.c
-
-./a.out "The string should split here ->, here ->, and here ->,." ","
-
 */
 /*
 #include <stdio.h>
 
-int		main(int argc, char **argv)
+int main(void)
 {
-	char	**tab;
-	char	*str;
+	char str[] = "The string should split here ->, here ->, and here ->,.";
+	char c = ',';
 
-	if (argc != 3)
-		return (1);
-	str = argv[1];
-	tab = ft_split(str, *argv[2]);
-	if (!tab)
-		return (1);
-	while (*tab)
+	char **sub_strings = ft_split(str, c);
+
+	int ctr = 0;
+
+	while (sub_strings[ctr])
 	{
-		printf("%s\n", *tab);
-		tab++;
+		printf("%s\n", sub_strings[ctr]);
+		ctr++;
 	}
-	return (0);
 }
 */

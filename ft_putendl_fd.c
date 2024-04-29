@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 21:37:04 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:45:52 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:47:39 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,4 @@ and move on to the next character in the string.
 
 After we've written all the characters in the string, we add a newline
 character to the file descriptor.
-
-M a i n   F o r   T e s t i n g : */
-/*
-int	main(int argc, char **argv)
-{
-	int		fd;
-
-	if (argc != 3)
-		return (0);
-	fd = atoi(argv[2]);
-	ft_putendl_fd(argv[1], fd);
-	return (0);
-}
 */

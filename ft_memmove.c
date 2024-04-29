@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:02 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:29:17 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:44:18 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,29 +60,4 @@ If the destination pointer is before the source pointer, we copy from the
 nd to the beginning to avoid overwriting the source data before it's copied.
 If the destination pointer is after the source pointer, we copy from the 
 beginning to the end.
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int		main(void)
-{
-	char	s1[] = "abcdefghijklmnop";
-	char	s2[] = "ABCDEFGHIJKLMNOP";
-	char	result[20];
-
-	ft_memmove(result, s2, 10);
-	printf("%s\n", result);
-	ft_memmove(result + 10, s2, 10);
-	printf("%s\n", result);
-	ft_memmove(result, s2 + 10, 10);
-	printf("%s\n", result);
-	ft_memmove(result + 10, s2 + 10, 10);
-	printf("%s\n", result);
-	ft_memmove(result, s1, 20);
-	printf("%s\n", result);
-	ft_memmove(result + 10, s1, 10);
-	printf("%s\n", result);
-	return (0);
-}
 */

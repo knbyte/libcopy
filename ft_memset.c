@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:13:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:26:31 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:46:30 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ Ptr is incrimented by 1 to move to the next character.
 We return the string s.
 
 M a i n   F o r   T e s t i n g : */
-
 /*
 #include <stdio.h>
 
@@ -56,11 +55,9 @@ int	main(void)
 
 	strlcpy(str1, "abcdefghi", sizeof(str1));
 	strlcpy(str2, "abcdefghi", sizeof(str2));
-
 	printf("Before ft_memset: %s\n", str2);
 	ft_memset(str2, 'x', 5);
 	printf("After ft_memset: %s\n", str2);
-
 	return (0);
 }
 */

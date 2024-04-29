@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 16:12:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:32:29 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:38:35 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,25 @@ that precede the terminating NUL character.
 
 F u n c t i o n   P r o c e s s :
 
-We initialize a counter variable ctr to 0. We then iterate through the
-string, incrementing the counter each time we encounter a character. We
-then return the value of the counter.
+- We initialize a counter variable ctr to 0.
+
+- We then iterate through the string, incrementing the counter
+	each time we encounter a character.
+	
+- We then return the value of the counter.
 
 M a i n   F o r   T e s t i n g : */
 /*
-int		main(void)
-{
-	char	*test_string;
-	int		len;
+#include <stdio.h>
 
-	test_string = "This is a test string";
-	len = ft_strlen(test_string);
-	printf("The length of the string \"%s\" is %d\n", test_string, len);
+int main(void)
+{
+	char str[] = "fish";
+	char str2[] = "anotherfish";
+	int result = ft_strlen(str);
+	int result2 = ft_strlen(str2);
+	printf ("length of 'fish': %d\n", result);
+	printf ("length of 'anotherfish': %d\n", result2);
 	return (0);
 }
 */

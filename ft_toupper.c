@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:59:23 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:46:07 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:09:12 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,18 +37,4 @@ We check if the character is in the range of lowercase letters (97-122).
 If it is, we return the uppercase version of the character by subtracting
 32 from it (the difference on the ASCII table). Otherwise, we return the
 original character.
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	str[] = "aBcDeFgHiJkLmNoPqRsTuVwXyZ";
-
-     printf("%s\n", str);
-     printf("%s\n", ft_tolower(str));
-     printf("%s\n", str);
-	return (0);
-}
 */

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:12:14 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 23:16:47 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:40:21 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,21 +48,25 @@ integer.
 
 F u n c t i o n   P r o c e s s :
 
-Delcare and define three varables, the counter/iterater at the first digit (0), 
-the result (0), and the sign as positive (1).
+- Skip all whitespace
 
-First we skip all the spaces, tabs, newlines, vertical tabs, form feeds,
-and carriage returns.
+- Check if first character is a minus/plus sign, if negative set sign to -1.
 
-Then we check if the first character is a minus or plus sign.
-If it is negative (shown by the minus sign), we set the sign to -1.
+- Regardless of the sign, increment ctr to move past the sign character
+	(either + or -).
 
-We then increment the iterator and check if the next character is a digit.
-If it is, we multiply the result by 10 and add the digit to it.
-We then increment the iterator again.
-We return the result multiplied by the sign.
+- Check for digit, if digit:
+	- multiply the result by 10 (make space for new digit)
+	- take 48 from the chartacter to get numerical value of digit
+	- add obtained digit to result
+	- increment ctr to move to next character
 
-M a i n   F o r   Tß e s t i n g :
+- Multiply final result by the sign (to handle pos/neg numbers)
+
+- Return the converted integer value.
+
+
+M a i n   F o r   T e s t i n g :
 
 cc -Wall -Werror -Wextra ft_atoi.c
 

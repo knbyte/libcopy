@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:21 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 16:58:17 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:03:32 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,26 +55,4 @@ destination buffer size. While the loop is running, we increment the
 counter by 1, and copy the current character from src to dest.
 
 We null-terminate the string and return the length of src.
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	char	dest[100];
-	char	src[50];
-	int		ret;
-
-	strcpy(src, "Hello, world!");
-	memset(dest, 0, sizeof(dest);
-
-	ret = ft_strlcpy(dest, src, sizeof(dest));
-
-	printf("ret: %d\n", ret);
- 
-	printf("dest: %s\n", dest);
-
-	return (0);
-}
 */

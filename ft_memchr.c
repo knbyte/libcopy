@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:12:37 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:22:59 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:48:41 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,4 @@ end of the block or until we find the character to search for.
 
 If we find the character to search for, we return the pointer to the memory
 block that contains the character. Otherwise, we return NULL.
-
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int					main(int argc, char **argv)
-{
-	int				c;
-	char			s[] = "abcdef";
-	void			*result;
-
-	if (argc != 3)
-		return (0);
-	c = atoi(argv[1]);
-	result = ft_memchr(s, c, strlen(s));
-	if (result)
-		printf("Found %c at %p\n", c, result);
-	else
-		printf("Did not find %c\n", c);
-	return (0);
-}
 */

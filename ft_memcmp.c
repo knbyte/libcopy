@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:12:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:28:28 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:41:58 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,24 +53,4 @@ going out of bounds of either of the strings.)
 
 Once we hit the end of the string, or once the strings are no longer equal, we
 return the difference between the two strings at the current index (ctr).
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int		main(int argc, char **argv)
-{
-	char	s1[] = "abcdef";
-	char	s2[] = "abcghi";
-	int		res;
-
-	if (argc != 3)
-	{
-		printf("Usage: %s <str1> <str2>\n", argv[0]);
-		return (0);
-	}
-	res = ft_memcmp(s1, s2, (unsigned long)ft_strlen(argv[1]));
-	printf("'%s' '%s': %d\n", s1, s2, res);
-	return (0);
-}
 */

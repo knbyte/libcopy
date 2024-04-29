@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:18:19 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:34:13 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:13:10 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,46 +50,41 @@ specified in 'set' removed from the beginning and the end of the string.
 
 F u n c t i o n   P r o c e s s :
 
-We declare four variables. Trimmed, which is a pointer to the trimmed string,
-len, which is the length of the trimmed string, start, which is the starting
-index of the trimmed string, and end, which is the ending index of the trimmed
-string.
+- Variable Declaration
+    - char *trimmed: Character pointer to store the trimmed string.
+    - size_t len: Size of the trimmed string (unsigned long).
+    - size_t start: Starting index of the trimmed string (unsigned long).
+    - 'size_t end: Ending index of the trimmed string (unsigned long).
 
-If s1 or 'set' are NULL, we return NULL. We set start to 0.  We then loop through
-the string 's1' starting at index 'start' and While the current character is not
-NULL and is present in string 'set'(using strchr to check), increment 'start'.
+- Handle Empty String or Set
+    - If s1 or 'set' are NULL, we return NULL.
 
-We set the end to the length of the string 's1'. We then loop through the string
-'s1' starting at index 'end' and While the current character is not NULL
-and is present in the string 'set'(using strchr to check), decrement 'end'.
+- Find Starting Index
+    - Set 'start' to 0 and loop through 's1 starting at 'start
+    - While the current character is not NULL and is present the string 'set'
+		(using 'ft_strchr' to check), increment 'start'.
+    - This loop skips leading characters in 's1' that are part of the 'set'.
 
-If 'end' is greater than 'start', we set 'len' to the difference between
-'end' and 'start'. Otherwise, we set 'len' to 0.
+- Find Ending Index
+    - Set 'end' to the length of the string 's1' and loop through 's1' starting
+		from the end.
+    - While the current character is not NULL and is present in the string 'set'
+		(using'ft_strchr' to check), decrement 'end'.
+    - This loop skips trailing characters in 's1' that are part of the 'set'.
 
-We allocate memory for the trimmed string using malloc(3). If 'trimmed' is NULL,
-we return NULL. We copy the substring 's1' starting at index 'start' and ending
-at index 'end' into 'trimmed'. We return 'trimmed'.
+- Calculate Trimmed Length
+    - If 'end' is greater than 'start' (meaning there are characters to keep),
+		calculate the length as the difference between 'end' and 'start'.
+    - Otherwise, if 'end' is not greater than 'start' (meaning all characters are
+		in the set), set the length to 0 (resulting in an empty trimmed string).
 
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-#include <string.h>
+- Allocate Memory for Trimmed String
+    - Allocate memory for the trimmed string using 'malloc' (+1 for null-term).
+    - If allocation fails ('malloc' returns NULL), it returns NULL.
 
-int		main(void)
-{
-	char	*s1 = "  Hello, World  ";
-	char	*set = " ,";
-	char	*trimmed;
+- Copy & ReturnTrimmed Substring
+    - Copy the substring of 's1' starting at index 'start' and with length 'len'
+		into the allocated memory pointed to by 'trimmed'.
+    - Return 'trimmed'
 
-	trimmed = ft_strtrim(s1, set);
-	if (!trimmed)
-	{
-		printf("Failed to trim string\n");
-		return (1);
-	}
-	printf("Before: %s\n", s1);
-	printf("After: %s\n", trimmed);
-	free(trimmed);
-	return (0);
-}
 */

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:44:40 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:38:49 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 15:07:13 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,21 +36,22 @@ If it is, we return 1. Otherwise, we return 0.
 
 M a i n   F o r   T e s t i n g : */
 /*
+#include <unistd.h>
 #include <stdio.h>
 
-int	main(void)
+int    main(void)
 {
-	int	i;
-
-	i = -255;
-	while (i < 255)
-	{
-		if (ft_isascii(i) == 1)
-			printf("%d is an ASCII character\n", i);
-		else
-			printf("%d is not an ASCII character\n", i);
-		i++;
-	}
-	return (0);
+	int	chr = 'a';
+	int	nbr = '1';
+	int	sign = '+';
+	int	dot = '.';
+	int	sp = ' ';
+	int	nwli = '\n'; 
+    printf("a: %d\n", ft_isascii(chr));
+	printf("1: %d\n", ft_isascii(nbr));
+	printf("+: %d\n", ft_isascii(sign));
+	printf(".: %d\n", ft_isascii(sp));
+	printf(" : %d\n", ft_isascii(dot));
+	printf("/n: %d\n", ft_isascii(nwli));
 }
 */

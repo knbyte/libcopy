@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:14:59 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:48:26 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:03:40 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,31 +50,4 @@ function to copy the contents of s1 into the result string. We add 1 to
 s1_len to account for the null terminator. We then use the ft_strlcpy
 function to do the same with s2, lastly we return the result string.
 
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-#include <stdlib.h>
-
-int	main(void)
-{
-	char	*str1;
-	char	*str2;
-	char	*result;
-
-	str1 = "Hello, ";
-	str2 = "World!";
-
-	result = ft_strjoin(str1, str2);
-
-	if (!result)
-	{
-		printf("Error: malloc failed\n");
-		return (1);
-	}
-
-	printf("%s\n", result);
-	free(result);
-
-	return (0);
-}
 */

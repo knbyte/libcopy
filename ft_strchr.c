@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:09:45 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:30:58 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:58:25 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,26 +50,4 @@ pointer to the current character. If it doesn't, we increment the counter
 by 1 and repeat the loop. If we reach the end of the string and we haven't
 found the character, we return NULL.
 
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int	main(int argc, char **argv)
-{
-	char	*str;
-	char	*ptr;
-
-	if (argc != 3)
-	{
-		printf("Usage: %s <string> <char>\n", argv[0]);
-		return (0);
-	}
-	str = argv[1];
-	ptr = ft_strchr(str, *argv[2]);
-	if (!ptr)
-		printf("%s was not found in %s\n", argv[2], str);
-	else
-		printf("%s first occurs in %s is at %p\n", argv[2], str, (void*)ptr);
-	return (0);
-}
 */

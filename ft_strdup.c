@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:14:10 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 14:45:58 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:59:12 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,23 +62,19 @@ null character to the end of the string and return the allocated memory.
 M a i n   F o r   T e s t i n g : */
 /*
 #include <stdio.h>
-#include <stdlib.h>
+#include <strings.h>
 
-int	main(void)
+int    main(void)
 {
-	char	*test_string;
-	char	*dup_string;
+    char    *src;
+    char    *dst;
+	char	*dst2;
 
-	test_string = "Hello, world!";
-	dup_string = ft_strdup(test_string);
-	if (dup_string == NULL)
-	{
-		printf("Failed to allocate memory for duplicate string.\n");
-		return (0);
-	}
-	printf("Original string: %s\n", test_string);
-	printf("Duplicate string: %s\n", dup_string);
-	free(dup_string);
-	return (0);
+    src = "Source";
+    dst = ft_strdup(src);
+	dst2 = strdup(src);
+    printf("ft_strdup result: %s\n", dst);
+	printf("regular strdup result: %s\n", dst2);
+    return (0);
 }
 */

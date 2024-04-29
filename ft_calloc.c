@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:53:47 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/22 15:37:09 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:41:02 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,44 +31,29 @@ void	*ft_calloc(size_t count, size_t size)
 A b o u t   F u n c t i o n :
 
 calloc stands for "C Allocated"
-The calloc function allocates memory for an array of n objects of size bytes each
-and initializes all the bytes to zeroes.
-It does this by taking two arguments, n and size, and returning a pointer to the
-allocated memory.
+The calloc function allocates memory for an array of n objects of size bytes
+each and initializes all the bytes to zeroes.
+It does this by taking two arguments, n and size, and returning a pointer to
+the allocated memory.
 
 
 F u n c t i o n   P r o c e s s :
 
-We delcare and define two variables, total_size, which is the total size of the
-allocated memory, and ptr, which is the pointer to the allocated memory.
+- Decalre two variables
+	- total_size: total size of the allocated memory
+	- ptr: pointer to store address of allocated memory.
 
-We then multiply count by size to get the total size of the allocated memory.
+- Calculate Total Size
+	- Multiply count by size to get the total amount memory to allocate.
+	- We then call the malloc() function to allocate the memory.
+		- Malloc attempts to allocate a block of memory of the specified size and
+		returns a pointer to the beginning of that block.
+	- Assign the return value of malloc (the memory address) to the ptr variable.
 
-We then call the malloc() function to allocate the memory.  If successful,
-we call the bzero() function to initialize the memory to zero.
+- Initialize Memory
+	- If successful, call the ft_bzero function to set all bytes in the allocated
+		memory to zero.
 
-Finally, we return the pointer to the allocated memory.
-
-
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	int	*test_array;
-	int	i;
-
-	test_array = ft_calloc(5, sizeof(int));
-	if (!test_array)
-	{
-		printf("Failed to allocate memory.\n");
-		return (0);
-	}
-	printf("Allocated array of size 5.\n");
-	for (i = 0; i < 5; ++i)
-		printf("Element %d: %d\n", i, test_array[i]);
-	free(test_array);
-	return (0);
-}
+- Return Memory Pointer
+	- Return the pointer to the allocated memory block.
 */

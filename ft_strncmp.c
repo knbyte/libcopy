@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:11:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/03/10 00:28:52 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 17:13:16 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,33 +39,40 @@ respectively, to be less than, to match, or be greater than str2.
 
 F u n c t i o n   P r o c e s s :
 
-We declare a ctr variable and set it to 0. We then use a while loop to
-compare the characters of the two strings until we reach the end of the string
-or until we reach n characters. If the characters are equal, we increment the
-counter by 1. If the characters are not equal, we return the difference
-between the two characters at the current index (ctr).
+- Variable Declaration
+	- ctr, counter variable set it to 0.
 
-We return 0 if the strings are equal.
+- Looping for Character Comparison:
+    - The function uses a while loop to iterate throughboth strings.
+    - The loop continues as long as two conditions are met:
+        - The counter (ctr) is less than the specified n.
+        - At least one of the strings hasntt reached null.
+
+- Character Matching and Mismatch
+    - Inside the loop:
+        - If the characters at the current index in both strings are equal,
+		we intrement and loop through again. If no mismatch is encountered
+		the function returns 0 it indicate equal strings.
+		
+		- If the characters are not equal:
+            - cast both characters to unsigned char, ensuring
+				the difference calculation results in an unsigned integer.
+            - return the difference between the characters in each string
+			at the current index.
+
 
 M a i n   F o r   T e s t i n g : */
 /*
 #include <stdio.h>
 
-int		main(void)
-{
-	const char	str1[] = "abcdef";
-	const char	str2[] = "abcghi";
-	size_t		n = 6;
-	int			res;
+int main()
+{ 
+    char    str1[] = "Tired";
+    char    str2[] = "TireD";
 
-	res = ft_strncmp(str1, str2, n);
-	printf("'%s' '%s': %d\n", str1, str2, res);
-	n = 3;
-	res = ft_strncmp(str1, str2, n);
-	printf("'%s' '%s': %d\n", str1, str2, res);
-	n = 8;
-	res = ft_strncmp(str1, str2, n);
-	printf("'%s' '%s': %d\n", str1, str2, res);
-	return (0);
+    int result = ft_strncmp(str1, str2, 5);
+	int result2 = strncmp(str1, str2, 5);
+    printf("My ft_strncmp: %d\n", result);
+	printf("Regular strncmp: %d\n", result2);
 }
 */

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:03 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:22:00 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:49:00 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,43 +110,4 @@ until `n` is smaller than 10 and greater than -10, at which point the loop stops
 
 We null-terminate the string and return it.
 
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	int		i;
-	char	*s;
-
-	i = -12345;
-	s = ft_itoa(i);
-	if (!s)
-		return (0);
-	printf("%s\n", s);
-	free(s);
-	
-	i = 12345;
-	s = ft_itoa(i);
-	if (!s)
-		return (0);
-	printf("%s\n", s);
-	free(s);
-
-	i = 0;
-	s = ft_itoa(i);
-	if (!s)
-		return (0);
-	printf("%s\n", s);
-	free(s);
-
-	i = -1;
-	s = ft_itoa(i);
-	if (!s)
-		return (0);
-	printf("%s\n", s);
-	free(s);
-
-	return (0);
-}
 */

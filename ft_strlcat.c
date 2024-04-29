@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:07:29 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:31:43 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:59:36 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,21 @@ of the concatenated string.
 
 M a i n   F o r   T e s t i n g : */
 /*
-int	main(void)
-{
-	char	dest[50];
-	char	src[] = "This is a test string";
-	int		len;
-	
-	ft_bzero(dest, 50);
-	ft_strlcpy(dest, "Hello ", 50);
-	len = ft_strlcat(dest, src, 50);
-	printf("%s\n", dest);
-	printf("%d\n", len);
+#include <stdio.h>
 
-	return (0);
+int main()
+{
+    char str1[] = "String Number One";
+    char str2[] = "String Number Two";
+	char str3[] = "String Number One";
+    char str4[] = "String Number Two";
+
+    printf("Str1: %s\n", str1);
+    printf("Str2: %s\n", str2);
+    ft_strlcat(str1, str2, 18);
+    printf("ft_strlcat Result: %s\n", str1);
+    strlcat(str3, str4, 18);
+    printf("Strlcat Result: %s\n", str3);
+    return 0;
 }
 */

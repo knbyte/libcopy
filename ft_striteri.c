@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:48:43 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:59:21 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,4 @@ F u n c t i o n   P r o c e s s :
 We declare a variable 'ctr' and initialize it to 0. We check if the string
 and the function pointers are not NULL. If they are, we use a while loop
 to iterate through the string and apply the function to each character.
-
-M a i n   F o r   T e s t i n g : */
-/*
 */

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 21:36:15 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/04 22:53:41 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 18:47:50 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,4 @@ as the argument so that we can get the next digit.
 Then we convert n to a character by adding '0'. Lastly, we write the character
 to the file descriptor.
 
-M a i n   F o r   T e s t i n g : */
-/*
-int		main(int argc, char **argv)
-{
-	int			n;
-	int			fd;
-
-	if (argc != 3)
-		return (0);
-	n = atoi(argv[1]);
-	fd = atoi(argv[2]);
-	ft_putnbr_fd(n, fd);
-	return (0);
-}
 */

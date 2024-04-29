@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:13:27 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/16 14:48:24 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 19:13:10 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,55 +49,46 @@ sin the string, or NULL if the substring is not found.
 
 F u n c t i o n   P r o c e s s :
 
-We declare three variables, hay (haystack), needle, and result.
-If len is 0 and str is NULL, we return a null pointer. We then set
-result to str and hay to -1. If substr is an empty string, return the
-result.
+- Variable Declaration:
+	- hay (haystack), needle, and result
 
-This while loop to search through the haystack - each iteration of the loop it 
-ncrements the hay variable, checks if the character at that position in the
-haystack is not a null character and if the hay variable is less than the
-specified length. If it is not the end of the string and the hay variable
-is less than the length, it continues the loop.
+- Handle Empty String or Zero Length
+	- If len is 0 and str (haystack) is NULL, the function returns a null
+	pointer ((char *)0), indicating an invalid search scenario.
 
-Inside the loop, it initializes the needle variable to 0. It then enters another
-loop that continues until it reaches the end of the substr string (needle) or
-the end of the haystack (needle). Inside this loop, it checks if the character
-at the position in the haystack and substr string is the same. If they are the
-same and the needle is less than the length of the substr string, it increments
-the needle variable.
+- Handle Empty Substring
+	- If the first character of substr (substr[0]) is null, it implies an
+		empty substring. In this case, the function returns the original
+		result (which points to the beginning of the haystack string),
+		indicating a match for an empty substring anywhere in the haystack.
 
-If it finds a match of the substring within the string, it checks if the next
-character in the substr string is a null character.
+- Outer Loop: Search Haystack String (Limited by len)
+	- Iterates through the haystack string (str) using the hay index.
+	- The loop continues as long as:
+		- The character at the current position (result[++hay]) in the haystack
+			is not null (not the end of the string).
+        - The current position (hay) is less than the specified len .
+    - If either condition is not met, the loop exits, indicating no match found.
 
-If it is, it returns a pointer to the position in the haystack where the match
-was found. If it reaches the end of the haystack without finding a match,
-it returns a null pointer.
+- Inner Loop: Compare Characters in Substring and Haystack
+    - Inside the outer loop, a nested loop is used for comparison.
+		- Iterates through the substring (substr) using the needle index.
+        - The loop continues as long as:
+            - The character at the current position (hay +needle) in the haystack
+				(result) is the same as the character at the current position 
+				(needle) in the substring (substr).
+            - The combined index (hay + needle) is less than the specified length
+        - If either condition is not met, the inner loop exits.
 
-M a i n   F o r   T e s t i n g : */
-/*
-#include <stdio.h>
+No Match Found
+	- If the outer loop completes without finding a match, the function returns
+		a null pointer ((char *)0).
 
-int	main(void)
-{
-	char	*str = "This is a test string";
-	char	*substr = "is";
-	char	*result;
-
-	result = ft_strnstr(str, substr, 19);
-	if (result)
-		printf("Substring found at position %ld\n", result - str);
-	else
-		printf("Substring not found\n");
-
-	str = "This is a test string";
-	substr = "not";
-	result = ft_strnstr(str, substr, 19);
-	if (result)
-		printf("Substring found at position %ld\n", result - str);
-	else
-		printf("Substring not found\n");
-
-	return (0);
-}
+- Match Found
+	- If it finds a match, it checks if the next character in the substring
+		(substr[needle + 1]) is null.
+	- If it is, the function returns a pointer (&result[hay]) to the starting 
+		position of the match in the haystack string. This pointer points to the
+		character in the haystack that matched the first character of the
+		substring.
 */
