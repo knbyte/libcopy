@@ -6,22 +6,20 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 17:13:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 23:03:58 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/30 00:17:16 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memset(void *m, int c, size_t n)
 {
 	unsigned char	*ptr;
 
-	ptr = (unsigned char *)s;
+	ptr = (unsigned char *)m;
 	while (n-- > 0)
-	{
 		*ptr++ = (unsigned char)c;
-	}
-	return (s);
+	return (m);
 }
 
 /*
@@ -39,25 +37,23 @@ It does this by taking three arguments, s, c, and n.
 F u n c t i o n   P r o c e s s :
 
 - Variable Setup
-    - ptr: points to the beginning of the memory block represented by s using a
-		cast (unsigned char *)s. This cast ensures we work with bytes
-		(represented by unsigned char) when setting memory.
+    - ptr: points to the beginning of the memory block.
+		(Using a cast to make certain we access one byte at a time by using
+		chars becuase voids will end up trying to dereference a void
+		pointer (this does not work) plus chars are only one byte.
 
 - Looping and Setting Values
-    - The function uses a while loop to iterate n times:
-        - n-- > 0: This pre-decrement loop condition ensures n is decremented
-			before each iteration, continuting as long as n is greater than 0.
+    - The function uses a while loop until n hits 0
 
-- Setting Character Value
-    - Inside the loop:
-        - *ptr++ = (unsigned char)c: This line performs three actions:
-            - *ptr: Dereferences the ptr pointer, accessing the current byte in
-				the memory block.
-            - = (unsigned char)c: Assigns the value of c (converted to unsigned
-				char) to the current byte, ensuting we're assigning a single byte
-				value.
-            - ptr++: Increments ptr after the assignment, moving it to point to
-				the next byte in the memory block for the next iteration.
+- Setting Character Value Inside the loop:
+    - *ptr++ = (unsigned char)c: This line performs three actions:
+        - *ptr: Dereferences the ptr pointer, accessing the current byte in
+			the memory block.
+        - = (unsigned char)c: Assigns the value of c (converted to unsigned
+			char) to the current byte, ensuting we're assigning a single byte
+			value.
+         - ptr++: Increments ptr after the assignment, moving it to point to
+			the next byte in the memory block for the next iteration.
 
 - Returning the Pointer
     - After the loop completes, the function returns the original pointer s.
