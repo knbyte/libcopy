@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 20:25:35 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/29 23:19:10 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,8 @@ F u n c t i o n   P r o c e s s :
         - The function calls the provided function f with two arguments:
         	- ctr: The current index (unsigned integer) in the string.
             - s[ctr]: The character at the current index in the original string.
-        - The result returned by the function f is stored in the corresponding position of the resulting string (res[ctr]).
+			- 
+        - The result returned by 'f' is stored in (res[ctr]).
         - The counter (ctr) is incremented to move to next character
 
 - Add Null Terminator and Return Result
