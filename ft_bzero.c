@@ -6,17 +6,17 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:40:49 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/30 22:57:49 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long n)
+void	ft_bzero(void *m, unsigned long n)
 {
-	char	*str;
+	char	*mem;
 
-	str = (char *)s;
+	mem = (char *)m;
 	while (n-- > 0)
-		*str++ = '\0';
+		*mem++ = '\0';
 }
 
 /*
@@ -26,17 +26,18 @@ void	ft_bzero(void *s, unsigned long n)
 A b o u t   F u n c t i o n :
 
 bzero stands for "Byte ZERO"
-The bzero function sets the first n bytes of the string s to zeroes.
+The bzero function sets the first n bytes of memory mem to zeroes.
 
 
 F u n c t i o n   P r o c e s s :
 
 ft_bzero
 - Takes two arguments:
-	- void *s: Pointer to a memory block (any data type).
+	- void *m: Pointer to a memory block (can be any data type).
 	- unsigned long n: Number of bytes to set to zero.
 
-- Declares a char pointer str and assigns the casted value of s to it
+- Declares a char pointer (makes sure we go one byte at a time)
+	str and assigns the casted value of s to it
 	(treats s as a character array).
 
 - Initiates a while loop that continues as long as n is greater than zero

@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:02 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 23:14:58 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/30 23:55:49 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ F u n c t i o n   P r o c e s s :
     - dest_ptr: pointer holding the original destination pointer (dest).
 
 - Handling NULL Pointers
-    - The function first checks for a special case where both dest and src are
+    - The function first checks for a special case where both dest or src are
 		NULL pointers. If both are NULL, it simply returns dest (which is
 		already NULL) to indicate an empty copy operation.
 

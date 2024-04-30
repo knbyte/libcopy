@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:06:38 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/30 00:03:14 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 00:00:26 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,11 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void	*dest_ptr;
-
-	dest_ptr = dest;
 	if (!dest && !src)
-		return (dest);
+		return (NULL);
 	while (n--)
-		*(char *)dest++ = *(char *)src++;
-	return (dest_ptr);
+		((char *)dest)[n] = ((char *)src)[n];
+	return (dest);
 }
 
 /*
@@ -37,43 +34,35 @@ into the object pointed to by s1.
 
 F u n c t i o n   P r o c e s s :
 
-- Variable Setup
-    - dest_ptr: pointer holding the original destination pointer (dest).
-
 - Handling NULL Pointers
-    -  Checks for a special case where both dest and src are NULL pointers.
-	-  If both are NULL, it simply returns dest (which is already NULL).
+    -  Checks if both dest or src are valid pointers (are pointing at something)
+        and returns NULL of either are invald.
 
 - Looping and Copying:
     - The function uses a while loop that decrements n before each iteration.
-		(Ensuring n bytes are copied.)
+        (Ensuring n bytes are copied.)
     - Inside the loop:
-        - This line performs the actual copy operation:
-            - Both dest and src are cast to char* to treat them as character
-				pointers to char pointers to access them 1 byte at a time.
-            - The dereferencing (*) operator accesses the value at the memory
-				location pointed to by each pointer.
-            - The assignment = copies the value from the source byte
-				(*(char *)src) to the destination byte (*(char *)dest).
-            - The post-increment moves both dest and src up while n is counting down.
+            - Dest/src are cast to character pointers (going 1 byte at a time).
+            - Starts and n and decrements, going backwards byte by byte.
+            - Dereferencing to access the value itself.
+            - Copies the value from the source byte to the destination byte.
 
 - Returning the Pointer
-    - After the loop completes, the function returns dest_ptr which holds the
-	original destination pointer (dest).
+    - After the loop completes, the function returns dest.
 
 M a i n   F o r   T e s t i n g : */
 /*
 #include <stdio.h>
 
-int		main(void)
+int     main(void)
 {
-	char	dest[100];
-	char	src[] = "Hello, world!";
+    char    dest[100];
+    char    src[] = "Hello, world!";
 
-	ft_memset(dest, 0, 100);
-	ft_memcpy(dest, src, ft_strlen(src));
-	printf("%s\n", dest);
+    ft_memset(dest, 0, 100);
+    ft_memcpy(dest, src, ft_strlen(src));
+    printf("%s\n", dest);
 
-	return (0);
+    return (0);
 }
 */

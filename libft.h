@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:13:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/25 18:36:58 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/04/30 23:16:21 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,14 +75,13 @@ int		ft_isprint(int c);
 /*                            MEMORY FUNCTIONS                                */
 /* ************************************************************************** */
 
-void	ft_bzero(void *s, unsigned long n);
-void	*ft_memset(void *s, int c, size_t n);
+void	ft_bzero(void *m, unsigned long n);
 void	*ft_calloc(size_t count, size_t size);
-void	ft_bzero(void *s, unsigned long n);
-int		ft_memcmp(const void *str1, const void *str2, size_t n);
+void	*ft_memchr(const void *m, int c, size_t n);
+int		ft_memcmp(const void *mem1, const void *mem2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
+void	*ft_memset(void *m, int c, size_t n);
 
 /* ************************************************************************** */
 /*                             WRITE FUNCTIONS                                */
@@ -97,26 +96,24 @@ void	ft_putstr_fd(char *str, int fd);
 /*                             STRING FUNCTIONS                               */
 /* ************************************************************************** */
 
-size_t	ft_strlen(const char *str);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
-int		ft_strlcpy(char *dest, const char *src, size_t size);
-int		ft_strlcat(char *dest, const char *src, size_t destsize);
-char	*ft_strchr(const char *s, int c);
-char	*ft_strrchr(const char *s, int c);
-int		ft_strncmp(const char *s1, const char *s2, size_t n);
-int		ft_strcmp(const char *s1, const char *s2);
-char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *str);
-char	*ft_strdup(const char *src);
-
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_itoa(int n);
-char	**ft_split(char const *str, char c);
+char	**ft_split(const char *str, char c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strdup(const char *src);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_strlcat(char *dest, const char *src, size_t destsize);
+int		ft_strlcpy(char *dest, const char *src, size_t destsize);
+size_t	ft_strlen(const char *str);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+int		ft_strncmp(const char *str1, const char *str2, size_t n);
+char	*ft_strnstr(const char *str, const char *substr, unsigned int len);
+char	*ft_strrchr(const char *s, int c);
+char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
 /* ************************************************************************** */
 /*                             LIST FUNCTIONS                                 */
