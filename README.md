@@ -24,8 +24,7 @@ Examples here
 ```
 
 ## Makefile Commands for Integration
-
-make: Compiles source files and builds the libft.a library.
-make clean: Removes all temporary object files generated during compilation.
-make fclean: Deletes the generated libft.a library file for a clean slate.
-make re: Recompiles the entire library from scratch after code modifications.
+`make` to compile library<br>
+`make clean` to remove object files<br>
+`make fclean` to delete library file<br>
+`make re` to recompile library<br>
