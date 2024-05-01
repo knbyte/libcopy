@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:13:49 by emduncan          #+#    #+#             */
-/*   Updated: 2024/05/01 15:23:28 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:40:43 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,15 +51,6 @@ name the group t_list.
 # ifndef INT_MIN
 #  define INT_MIN -2147483648
 # endif
-
-/* ************************************************************************** */
-/*                             COMMENTS/NOTES                                 */
-/*   The function note takes a string as input and does nothing with it.      */
-/*   It is only used for the sake of getting around norminette.               */
-/*   This is listed in the notes.c file                                       */
-/* ************************************************************************** */
-
-/*void	note(char *note); */
 
 /* ************************************************************************** */
 /*                             CHECK FUNCTIONS                                */
