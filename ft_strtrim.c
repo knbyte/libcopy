@@ -6,26 +6,26 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:18:19 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 19:13:10 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:20:30 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *str, char const *set)
 {
 	char	*trimmed;
 	size_t	len;
 	size_t	start;
 	size_t	end;
 
-	if (!s1 || !set)
+	if (!str || !set)
 		return (NULL);
 	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (str[start] && ft_strchr(set, str[start]))
 		start++;
-	end = ft_strlen(s1);
-	while (end > start && ft_strchr(set, s1[end - 1]))
+	end = ft_strlen(str);
+	while (end > start && ft_strchr(set, str[end - 1]))
 		end--;
 	if (end > start)
 		len = end - start;
@@ -34,7 +34,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	trimmed = (char *)malloc(sizeof(char) * (len + 1));
 	if (!trimmed)
 		return (NULL);
-	ft_strlcpy(trimmed, s1 + start, len + 1);
+	ft_strlcpy(trimmed, str + start, len + 1);
 	return (trimmed);
 }
 
@@ -44,7 +44,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 A b o u t   F u n c t i o n :
 
-Allocates (with malloc(3)) and returns a copy of 's1' with the characters
+Allocates (with malloc(3)) and returns a copy of 'str' with the characters
 specified in 'set' removed from the beginning and the end of the string.
 
 
@@ -57,20 +57,20 @@ F u n c t i o n   P r o c e s s :
     - 'size_t end: Ending index of the trimmed string (unsigned long).
 
 - Handle Empty String or Set
-    - If s1 or 'set' are NULL, we return NULL.
+    - If str or 'set' are NULL, we return NULL.
 
 - Find Starting Index
-    - Set 'start' to 0 and loop through 's1 starting at 'start
+    - Loop through 'str beginning at 'start'
     - While the current character is not NULL and is present the string 'set'
 		(using 'ft_strchr' to check), increment 'start'.
-    - This loop skips leading characters in 's1' that are part of the 'set'.
+    - This loop skips leading characters in 'str' that are part of the 'set'.
 
 - Find Ending Index
-    - Set 'end' to the length of the string 's1' and loop through 's1' starting
-		from the end.
+    - Set 'end' to the length of 'str' and loop through 'str' beginning
+		at the end.
     - While the current character is not NULL and is present in the string 'set'
 		(using'ft_strchr' to check), decrement 'end'.
-    - This loop skips trailing characters in 's1' that are part of the 'set'.
+    - This loop skips trailing characters in 'str' that are part of the 'set'.
 
 - Calculate Trimmed Length
     - If 'end' is greater than 'start' (meaning there are characters to keep),
@@ -82,8 +82,8 @@ F u n c t i o n   P r o c e s s :
     - Allocate memory for the trimmed string using 'malloc' (+1 for null-term).
     - If allocation fails ('malloc' returns NULL), it returns NULL.
 
-- Copy & ReturnTrimmed Substring
-    - Copy the substring of 's1' starting at index 'start' and with length 'len'
+- Copy & Return Trimmed Substring
+    - Copy the substring of 'str' starting at index 'start' and with length 'len'
 		into the allocated memory pointed to by 'trimmed'.
     - Return 'trimmed'
 

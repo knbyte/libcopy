@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 15:12:14 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:40:21 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:07:38 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ A b o u t   F u n c t i o n :
 atoi stands for "Ascii TO Integer"
 The atoi fucntion converts a string to an integer numerical representation.
 It does this by taking a string as an argument and returning the converted
-integer.
+integer. 
 
 
 F u n c t i o n   P r o c e s s :

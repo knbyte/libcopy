@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:11:31 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 17:13:16 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:18:34 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,10 @@ F u n c t i o n   P r o c e s s :
 - Looping for Character Comparison:
     - The function uses a while loop to iterate throughboth strings.
     - The loop continues as long as two conditions are met:
-        - The counter (ctr) is less than the specified n.
-        - At least one of the strings hasntt reached null.
+        - The counter is less than the specified n.
+        - At least one of the strings hasnt reached null.
 
 - Character Matching and Mismatch
-    - Inside the loop:
         - If the characters at the current index in both strings are equal,
 		we intrement and loop through again. If no mismatch is encountered
 		the function returns 0 it indicate equal strings.

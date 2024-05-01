@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:03 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 19:43:43 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:10:16 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,7 @@ the allocation fails.
 F u n c t i o n   P r o c e s s :
 
 ft_digit_count:  counts the number of digits in an integer
-	- initialises a counter (ctr) to 0
-	- checks if the number is negative.
+	- checks if the number is negative
 		- If so, increments ctr by 1 to account for the sign.
 	- Loops while n is greater than 9 or less than -9 (to allow multi-digit nbrs)
 	- Each iteration divided n by 10 (removing last digit and incrementing ctr)
@@ -114,7 +113,7 @@ ft_itoa:  converts an integer to a string
     	- ctr: Counter variable used for indexing the resulting string.
     	- sign: integer variable storing the sign (+ or -).
 
-	- Sets sign to 1, check if n is negative, if so changesign to -1.
+	- Sets sign to 1, check if n is negative, if so change sign to -1.
 
 	- Allocates memory for string using ft_count_digit + 1 for null terminator.
 		- If allocation fails returns NULL.

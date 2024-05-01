@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 23:16:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 23:19:10 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:16:09 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,9 @@ string resulting from successive applications of 'f'.
 
 F u n c t i o n   P r o c e s s :
 
-- Variable Declaration
-	- *res: pointer to a character array storing the resulting modified string
-	- ctr: current index/counter variable
-
 - Handle Empty String or NULL Function Pointer
-    - The function checks if the input string or the function pointer is NULL.
-    - If either is NULL, it returns NULL, indicating an error or invalid input.
+    - The function checks if the input string or function pointer is invalid.
+    - If either is invalid, it returns NULL, indicating an error/invalid input.
 
 - Allocate Memory for Resulting String
     - The function calls ft_strlen to get the length of 's'.

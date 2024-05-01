@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:52:24 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/30 22:57:49 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:07:42 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,12 @@ ft_bzero
 	- unsigned long n: Number of bytes to set to zero.
 
 - Declares a char pointer (makes sure we go one byte at a time)
-	str and assigns the casted value of s to it
-	(treats s as a character array).
+	mem and assigns the casted value of m to it.
 
-- Initiates a while loop that continues as long as n is greater than zero
-	(post-decrement n--).
-	- Inside the loop:
-		- Sets the character pointed to by str to the null terminator (\0).
-		- Increments str to point to the next character in the memory block.
-		- Post-decrement str ensures it traverses the memory block character
+- Uses while loop that goes through n times.
+		- Sets the character pointed to by mem to the null terminator (\0).
+		- Increments mem to point to the next character in the memory block.
+		- Post-decrement mem ensures it traverses the memory block character
 			by character
 - Effectively sets the first n bytes of the memory block pointed to by s to zero.
 

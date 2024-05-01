@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 20:52:25 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 15:08:38 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:08:18 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ int	ft_isprint(int c)
 		return (1);
 	return (0);
 }
-
 /*
 
 ~ N O T E S ~

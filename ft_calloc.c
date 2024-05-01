@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 16:53:47 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/29 18:41:02 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:07:22 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,16 +39,16 @@ the allocated memory.
 
 F u n c t i o n   P r o c e s s :
 
-- Decalre two variables
+- Decalre variables
 	- total_size: total size of the allocated memory
 	- ptr: pointer to store address of allocated memory.
 
 - Calculate Total Size
 	- Multiply count by size to get the total amount memory to allocate.
-	- We then call the malloc() function to allocate the memory.
+	- We call malloc to allocate the memory.
 		- Malloc attempts to allocate a block of memory of the specified size and
 		returns a pointer to the beginning of that block.
-	- Assign the return value of malloc (the memory address) to the ptr variable.
+	- Assign the return value of malloc (the memory address) to ptr.
 
 - Initialize Memory
 	- If successful, call the ft_bzero function to set all bytes in the allocated

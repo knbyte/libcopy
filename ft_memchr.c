@@ -6,7 +6,7 @@
 /*   By: emduncan <emduncan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:12:37 by emduncan          #+#    #+#             */
-/*   Updated: 2024/04/30 23:04:09 by emduncan         ###   ########.fr       */
+/*   Updated: 2024/05/01 15:10:50 by emduncan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ memchr stands for "Memory Character Copy"
 The memchr function locates the first occurrence of c (converted to an unsigned
 char) in the first n bytes of the object pointed to by m.
 
-0
+
 F u n c t i o n   P r o c e s s :
 
 - Variable Setup
