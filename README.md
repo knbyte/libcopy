@@ -9,15 +9,7 @@ During this project, I honed my skills in memory management, string manipulation
 - Reimplementation of commonly used standard C library functions.
 - Adherence to the 42 School's coding standards (Norm).
 - Well-documented codebase for easy comprehension and future modifications.
-
-## Structure
-The project is divided into the following parts:
-
-Standard Library Functions: Reimplementations of commonly used functions.
-Additional Assignment Functions: Functions designed to enhance functionality and code readability.
-Bonus List Functions:
-Other Functions: Additional functions seperate to the assignment I have since added to my library.
-
+  
 ## Example Usage
 ```
 Examples here
